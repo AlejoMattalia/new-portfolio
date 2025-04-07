@@ -4,6 +4,7 @@ import { GmailIcon } from "@/assets/icons/GmailIcon";
 import { InstagramIcon } from "@/assets/icons/InstagramIcon";
 import { LinkedinIcon } from "@/assets/icons/LinkedinIcon";
 import { WhatsappIcon } from "@/assets/icons/WhatsappIcon";
+import { BrilliantTitle } from "@/components/common/BrilliantTitle";
 import { CustomButtom } from "@/components/common/CustomButtom";
 import { Icon } from "@/components/common/Icon";
 import { downloadCV, redirectWhatsapp } from "@/utils/utils";
@@ -17,32 +18,8 @@ export const Info = () => {
       transition={{ delay: 0.5, duration: 1 }}
       className="flex flex-col items-start justify-center w-full max-w-[320px]"
     >
-      <style>
-        {`
-          @keyframes shine {
-            0% {
-              background-position: -200%;
-            }
-            100% {
-              background-position: 200%;
-            }
-          }
-        `}
-      </style>
       <h1 className="text-white text-4xl font-bold inline-block ">
-        ALEJO{" "}
-        <span
-          style={{
-            background: "linear-gradient(90deg, #8e44ad, #c084fc, #8e44ad)",
-            backgroundSize: "200% auto",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            display: "inline-block",
-            animation: "shine 2s linear infinite",
-          }}
-        >
-          MATTALIA
-        </span>
+        ALEJO <BrilliantTitle title="MATTALIA" />
       </h1>
 
       <h2 className="text-white text-xl font-bold mt-1">

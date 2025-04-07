@@ -3,6 +3,7 @@ import { Home } from "./components/home/Home";
 import { Navbar } from "./components/Navbar";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { theme } from "./theme/themeConfig";
+import { Technologies } from "./components/technologies/Technologies";
 
 function App() {
   const canvasRef = useRef(null);
@@ -14,7 +15,9 @@ function App() {
     let w = (canvas.width = window.innerWidth);
     let h = (canvas.height = window.innerHeight);
 
-    const stars = Array.from({ length: 400 }, () => ({
+    const starCount = window.innerWidth < 600 ? 200 : 600;
+
+    const stars = Array.from({ length: starCount }, () => ({
       x: Math.random() * w,
       y: Math.random() * h,
       radius: Math.random() * 1.5,
@@ -59,13 +62,16 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
-      <div className="relative w-full min-h-screen overflow-hidden">
+      <div className="relative w-full min-h-screen overflow-hidden pb-30">
         <canvas
           ref={canvasRef}
           className="absolute top-0 left-0 w-full h-full"
         />
         <Navbar />
         <Home />
+        <section className="w-full flex items-center justify-center">
+          <Technologies />
+        </section>
       </div>
     </ThemeProvider>
   );

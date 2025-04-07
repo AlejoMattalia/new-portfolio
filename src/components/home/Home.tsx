@@ -3,13 +3,13 @@ import { ContainerTwo } from "./desktop/ContainerTwo";
 import { ContainerThree } from "./desktop/ContainerThree";
 import { ContainerFour } from "./desktop/ContainerFour";
 import { Info } from "./mobile/Info";
-import PhotoProfile from "@/assets/images/photoProfile.jpeg";
+import PhotoProfile from "@/assets/images/photoProfile.webp";
 import { motion } from "framer-motion";
 
 export const Home = () => {
   return (
     <>
-      <div className="hidden relative z-10 lg:flex flex-col items-center justify-center w-full mt-30 mb-20">
+      <div className="hidden relative z-10 lg:flex flex-col items-center justify-center w-full mt-30">
         <div className="w-full flex items-center justify-between">
           <ContainerOne />
           <ContainerTwo />

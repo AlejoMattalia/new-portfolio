@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import PhotoProfile from "@/assets/images/photoProfile.jpeg";
+import PhotoProfile from "@/assets/images/photoProfile.webp";
 import Tilt from "react-parallax-tilt";
 
 export const ContainerOne = () => {

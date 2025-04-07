@@ -1,3 +1,4 @@
+import { BrilliantTitle } from "@/components/common/BrilliantTitle";
 import { motion } from "framer-motion";
 
 export const ContainerTwo = () => {
@@ -8,33 +9,8 @@ export const ContainerTwo = () => {
       transition={{ delay: 1, duration: 0.5 }}
       className="w-[50%] h-full flex flex-col items-start justify-start relative top-[1px] right-[1px]"
     >
-      <style>
-        {`
-          @keyframes shine {
-            0% {
-              background-position: -200%;
-            }
-            100% {
-              background-position: 200%;
-            }
-          }
-        `}
-      </style>
-
       <h1 className="text-white text-5xl font-bold inline-block relative right-2 bottom-0.5">
-        O{" "}
-        <span
-          style={{
-            background: "linear-gradient(90deg, #8e44ad, #c084fc, #8e44ad)",
-            backgroundSize: "200% auto",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            display: "inline-block",
-            animation: "shine 2s linear infinite",
-          }}
-        >
-          MATTALIA
-        </span>
+        O <BrilliantTitle title="MATTALIA" />
       </h1>
 
       <h2 className="text-white text-3xl font-bold mt-5 relative right-1 bottom-0.5">
