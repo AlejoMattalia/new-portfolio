@@ -1,0 +1,74 @@
+import { useEffect, useRef } from "react";
+import { Home } from "./components/home/Home";
+import { Navbar } from "./components/Navbar";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { theme } from "./theme/themeConfig";
+
+function App() {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current as unknown as HTMLCanvasElement;
+    const ctx = canvas.getContext("2d");
+
+    let w = (canvas.width = window.innerWidth);
+    let h = (canvas.height = window.innerHeight);
+
+    const stars = Array.from({ length: 400 }, () => ({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      radius: Math.random() * 1.5,
+      velocity: Math.random() * 0.5 + 0.2,
+    }));
+
+    const animate = () => {
+      if (!ctx) return;
+
+      // FONDO NEGRO
+      ctx.fillStyle = "black";
+      ctx.fillRect(0, 0, w, h);
+
+      ctx.fillStyle = "white";
+      stars.forEach((star) => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        star.y += star.velocity;
+        if (star.y > h) {
+          star.y = 0;
+          star.x = Math.random() * w;
+        }
+      });
+
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    const handleResize = () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+
+      <div className="relative w-full min-h-screen overflow-hidden">
+        <canvas
+          ref={canvasRef}
+          className="absolute top-0 left-0 w-full h-full"
+        />
+        <Navbar />
+        <Home />
+      </div>
+    </ThemeProvider>
+  );
+}
+
+export default App;
