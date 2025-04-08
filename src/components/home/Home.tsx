@@ -15,7 +15,7 @@ export const Home = () => {
           <ContainerTwo />
         </div>
 
-        <div className="w-full flex items-center justify-between mt-16">
+        <div className="w-full flex items-center justify-between mt-16 ">
           <ContainerThree />
           <ContainerFour />
         </div>

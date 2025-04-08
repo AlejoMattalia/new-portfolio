@@ -14,7 +14,7 @@ export const ContainerFour = () => {
       transition={{ duration: 0.5 }}
       className="w-[50%] flex flex-col justify-start items-start gap-8"
     >
-      <div className="mb-5 flex gap-5 relative left-2.5">
+      <div className="mb-5 flex gap-5 relative left-2.5 xl:hidden">
         <Icon
           redirect="mailto:alejoomattalia@gmail.com"
           icon={<GmailIcon color="#cccccc" width="40px" height="40px" />}

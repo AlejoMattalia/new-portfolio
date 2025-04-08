@@ -14,7 +14,7 @@ export const ContainerThree = () => {
       transition={{ delay: 0.5, duration: 0.5 }}
       className="w-[50%] flex flex-col justify-center items-end gap-8"
     >
-      <div className="mb-5 flex gap-5 relative right-2.5">
+      <div className="mb-5 flex gap-5 relative right-2.5 xl:hidden">
         <Icon
           redirect="https://www.linkedin.com/in/alejo-mattalia/"
           icon={<LinkedinIcon color="#cccccc" width="40px" height="40px" />}

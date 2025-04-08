@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { Home } from "./components/home/Home";
-import { Navbar } from "./layout/Navbar";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { theme } from "./theme/themeConfig";
 import { Technologies } from "./components/technologies/Technologies";
@@ -9,6 +8,7 @@ import { Projects } from "./components/projects/Projects";
 import { Contact } from "./components/contact/Contact";
 import { Toaster } from "sonner";
 import { ButtonScrollTop } from "./components/common/ButtonScrollTop";
+import { Layout } from "./layout/Layout";
 
 function App() {
   const canvasRef = useRef(null);
@@ -74,7 +74,7 @@ function App() {
           ref={canvasRef}
           className="absolute top-0 left-0 w-full h-full"
         />
-        <Navbar />
+        <Layout />
         <Home />
         <section className="w-full flex flex-col items-center justify-center">
           <Technologies />
