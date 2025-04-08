@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { RedirectText } from "./common/RedirectText";
-import { Icon } from "./common/Icon";
+import { RedirectText } from "../components/common/RedirectText";
+import { Icon } from "../components/common/Icon";
 import { MenuIcon } from "@/assets/icons/MenuIcon";
 import { motion, AnimatePresence } from "framer-motion";
 import { CloseIcon } from "@/assets/icons/CloseIcon";

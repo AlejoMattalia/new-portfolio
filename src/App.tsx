@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Home } from "./components/home/Home";
-import { Navbar } from "./components/Navbar";
+import { Navbar } from "./layout/Navbar";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { theme } from "./theme/themeConfig";
 import { Technologies } from "./components/technologies/Technologies";
@@ -8,6 +8,7 @@ import { Experience } from "./components/experience/Experience";
 import { Projects } from "./components/projects/Projects";
 import { Contact } from "./components/contact/Contact";
 import { Toaster } from "sonner";
+import { ButtonScrollTop } from "./components/common/ButtonScrollTop";
 
 function App() {
   const canvasRef = useRef(null);
@@ -82,6 +83,8 @@ function App() {
           <Contact />
         </section>
       </div>
+
+      <ButtonScrollTop />
     </ThemeProvider>
   );
 }
