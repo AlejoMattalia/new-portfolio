@@ -1,4 +1,5 @@
 export interface RedirectTextProps {
   text: string;
-  href: string;
+  redirect: string;
+  setOpenMenu?: React.Dispatch<React.SetStateAction<boolean>>;
 }

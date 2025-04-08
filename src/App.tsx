@@ -4,6 +4,10 @@ import { Navbar } from "./components/Navbar";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { theme } from "./theme/themeConfig";
 import { Technologies } from "./components/technologies/Technologies";
+import { Experience } from "./components/experience/Experience";
+import { Projects } from "./components/projects/Projects";
+import { Contact } from "./components/contact/Contact";
+import { Toaster } from "sonner";
 
 function App() {
   const canvasRef = useRef(null);
@@ -62,6 +66,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
+      <Toaster richColors position="bottom-right" className="z-[9999]" />
+
       <div className="relative w-full min-h-screen overflow-hidden pb-30">
         <canvas
           ref={canvasRef}
@@ -69,8 +75,11 @@ function App() {
         />
         <Navbar />
         <Home />
-        <section className="w-full flex items-center justify-center">
+        <section className="w-full flex flex-col items-center justify-center">
           <Technologies />
+          <Experience />
+          <Projects />
+          <Contact />
         </section>
       </div>
     </ThemeProvider>

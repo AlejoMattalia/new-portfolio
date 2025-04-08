@@ -8,7 +8,7 @@ export const ContainerOne = () => {
       initial={{ x: -1000, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ delay: 1.5, duration: 0.5 }}
-      className="w-[50%] h-full border-gray-700 flex items-center justify-end gap-14"
+      className="w-[50%] h-full flex items-center justify-end gap-14"
     >
       <Tilt
         glareEnable={true}
@@ -29,7 +29,7 @@ export const ContainerOne = () => {
         />
       </Tilt>
 
-      <div className="h-full border">
+      <div className="h-full">
         <h1 className="text-white text-5xl font-bold">ALEJ</h1>
 
         <h2 className="text-white text-3xl font-bold mt-5">

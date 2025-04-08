@@ -27,7 +27,7 @@ export const Navbar = () => {
     <>
       {/* Desktop Navbar */}
       <section
-        className={`hidden fixed z-20 lg:flex items-center justify-center w-full p-4 transition-all duration-300 ${
+        className={`hidden fixed z-50 lg:flex items-center justify-center w-full p-4 transition-all duration-300 ${
           scrolled ? "backdrop-blur-md bg-black/30" : ""
         }`}
       >
@@ -36,9 +36,10 @@ export const Navbar = () => {
             scrolled ? "shadow-lg bg-black/60 backdrop-blur-sm" : ""
           }`}
         >
-          <RedirectText text="TECNOLOGÍAS" href="#" />
-          <RedirectText text="EXPERIENCIA" href="#" />
-          <RedirectText text="PROYECTOS" href="#" />
+          <RedirectText text="TECNOLOGÍAS" redirect="technologies" />
+          <RedirectText text="EXPERIENCIA" redirect="experience" />
+          <RedirectText text="PROYECTOS" redirect="projects" />
+          <RedirectText text="CONTACTO" redirect="contact" />
         </nav>
       </section>
 
@@ -82,9 +83,26 @@ export const Navbar = () => {
                 className="bg-black w-full p-6 flex flex-col items-start border-b-2 border-gray-500 rounded-b-4xl text-white pt-16 z-40"
                 onClick={(e) => e.stopPropagation()}
               >
-                <RedirectText text="TECNOLOGÍAS" href="#" />
-                <RedirectText text="EXPERIENCIA" href="#" />
-                <RedirectText text="PROYECTOS" href="#" />
+                <RedirectText
+                  text="TECNOLOGÍAS"
+                  redirect="technologies"
+                  setOpenMenu={setOpenMenu}
+                />
+                <RedirectText
+                  text="EXPERIENCIA"
+                  redirect="experience"
+                  setOpenMenu={setOpenMenu}
+                />
+                <RedirectText
+                  text="PROYECTOS"
+                  redirect="projects"
+                  setOpenMenu={setOpenMenu}
+                />
+                <RedirectText
+                  text="CONTACTO"
+                  redirect="contact"
+                  setOpenMenu={setOpenMenu}
+                />
               </motion.nav>
             </motion.div>
           )}
