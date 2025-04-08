@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { GithubIcon } from "@/assets/icons/GithubIcon";
 import { LinkIcon } from "@/assets/icons/LinkIcon";
 import { CardProps } from "@/interface/project";
@@ -10,8 +11,17 @@ export const CardProject = ({
   linkRep,
   linkWeb,
 }: CardProps) => {
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+  const toggleOverlay = () => {
+    setIsMobileOpen((prev) => !prev);
+  };
+
   return (
-    <div className="relative w-64 bg-base-100 shadow-xl group overflow-hidden cursor-pointer border border-gray-100 rounded-2xl">
+    <div
+      className="relative w-64 bg-base-100 shadow-xl group overflow-hidden cursor-pointer border border-gray-100 rounded-2xl"
+      onClick={toggleOverlay}
+    >
       <figure className="w-full h-44 m-0">
         <img
           src={img}
@@ -20,7 +30,11 @@ export const CardProject = ({
         />
       </figure>
 
-      <div className="absolute inset-0 bg-black bg-opacity-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-center text-center px-5 py-3">
+      <div
+        className={`absolute inset-0 bg-black bg-opacity-90 transition-opacity duration-300 flex flex-col justify-start items-center text-center px-5 py-3 ${
+          isMobileOpen ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+        }`}
+      >
         <h2 className="card-title text-[#F4F4F4]">{title}</h2>
         <p className="text-xs text-[#F4F4F4]">{description}</p>
 
@@ -42,6 +56,7 @@ export const CardProject = ({
               target="_blank"
               rel="noopener noreferrer"
               className="group/icon bg-transparent p-1 rounded-full transition-colors duration-300 hover:bg-[#8e44ad]"
+              onClick={(e) => e.stopPropagation()}
             >
               <LinkIcon width="20px" height="20px" color="#fff" />
             </a>
@@ -53,6 +68,7 @@ export const CardProject = ({
               target="_blank"
               rel="noopener noreferrer"
               className="group/icon bg-transparent p-1 rounded-full transition-colors duration-300 hover:bg-[#8e44ad]"
+              onClick={(e) => e.stopPropagation()}
             >
               <GithubIcon width="20px" height="20px" color="#fff" />
             </a>

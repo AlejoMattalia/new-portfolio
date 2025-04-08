@@ -13,6 +13,7 @@ export const RedirectText = ({
 
     if (setOpenMenu) {
       setOpenMenu(false);
+      document.body.style.overflow = "auto";
     }
   };
 
