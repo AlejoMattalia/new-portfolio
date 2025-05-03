@@ -70,14 +70,14 @@ export const timelineFreelanceData: TimeLine[] = [
 ];
 
 export const projects = [
-  {
-    title: "Backend red social",
-    img: "https://res.cloudinary.com/dp0zorgdp/image/upload/v1707340223/porfolio/DESARROLLO_BACKEND_RED_SOCIAL_shbv7c.png",
-    technologies: ["Node js", "MongoDB"],
-    description:
-      "La práctica que realicé fue el desarrollo del backend de una red social.",
-    linkRep: "https://github.com/AlejoMattalia/red-social-backend",
-  },
+  // {
+  //   title: "Backend red social",
+  //   img: "https://res.cloudinary.com/dp0zorgdp/image/upload/v1707340223/porfolio/DESARROLLO_BACKEND_RED_SOCIAL_shbv7c.png",
+  //   technologies: ["Node js", "MongoDB"],
+  //   description:
+  //     "La práctica que realicé fue el desarrollo del backend de una red social.",
+  //   linkRep: "https://github.com/AlejoMattalia/red-social-backend",
+  // },
   {
     title: "Peluqueria Salvatore",
     img: "https://res.cloudinary.com/dl6igxwvo/image/upload/v1721756286/portolfio-alejo/Captura_desde_2024-07-23_14-35-29_yru7cr.png",
@@ -85,6 +85,15 @@ export const projects = [
     description:
       "Con su diseño web, cree experiencia digital para el Salón Slavatore.",
     linkWeb: "https://salvatoremensclub.com/",
+  },
+  {
+    title: "Robot Bailarín",
+    technologies: ["React js", "Three Fiber"],
+    img: "https://res.cloudinary.com/dl6igxwvo/image/upload/v1746232678/portolfio-alejo/Captura_desde_2025-05-02_21-36-59_v9rngb.png",
+    description:
+      "Robot Bailarín 3D: no solo baila, ¡también podés cambiar la música mientras se mueve al ritmo!",
+    linkWeb: "https://robot-dance-mu.vercel.app/",
+    linkRep: "https://github.com/AlejoMattalia/robot",
   },
   {
     title: "Juan Carlos Mattalia",
