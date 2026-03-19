@@ -4,7 +4,7 @@ import Tilt from "react-parallax-tilt";
 import { useCustomTranslation } from "@/hooks/use-custom-translation";
 
 export const ContainerOne = () => {
-  const t = useCustomTranslation();
+  const { t } = useCustomTranslation();
 
   return (
     <motion.div

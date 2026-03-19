@@ -30,7 +30,7 @@ export const ButtonScrollTop = () => {
           exit={{ opacity: 0, scale: 0.7 }}
           transition={{ duration: 0.3 }}
           onClick={handleScroll}
-          className="group fixed bottom-6 sm:bottom-10 right-6 sm:right-10 cursor-pointer w-12 h-12 flex items-center justify-center rounded-full z-50 transition-all duration-300 bg-zinc-800/40 backdrop-blur-md border border-zinc-700/50 text-zinc-400 hover:bg-white hover:text-black hover:border-white shadow-lg"
+          className="group fixed bottom-6 sm:bottom-10 right-6 sm:right-10 cursor-pointer w-12 h-12 flex items-center justify-center rounded-full z-50 transition-all duration-300 bg-white dark:bg-zinc-800 border border-border text-muted hover:bg-foreground hover:text-background shadow-2xl"
         >
           <ArrowUp
             width={24}

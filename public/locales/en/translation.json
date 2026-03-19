@@ -1,39 +1,274 @@
 {
+  "common": {
+    "present": "Present"
+  },
+  "months": {
+    "jan": "Jan",
+    "feb": "Feb",
+    "mar": "Mar",
+    "apr": "Apr",
+    "may": "May",
+    "jun": "Jun",
+    "jul": "Jul",
+    "aug": "Aug",
+    "sep": "Sep",
+    "oct": "Oct",
+    "nov": "Nov",
+    "dec": "Dec"
+  },
   "navbar": {
     "technologies": "TECHNOLOGIES",
     "experience": "EXPERIENCE",
     "projects": "PROJECTS",
+    "services": "SERVICES",
+    "process": "PROCESS",
+    "certifications": "CERTS",
+    "timeline": "JOURNEY",
     "contact": "CONTACT"
   },
   "home": {
     "title": {
       "oneLetter": "F",
-      "twoLetter": "D",
-      "one": "RONTE",
-      "two": "ND",
-      "three": "EVELOPER"
+      "twoLetter": "FULLSTACK",
+      "one": "S",
+      "two": "TACK",
+      "three": "DEVELOPER"
     },
-    "text": {
-      "first": {
-        "one": "Frontend develop",
-        "two": "I mainly work with",
-        "three": "and attractive use",
-        "four": "technologies, an",
-        "five": "",
-        "six": "I also have knowl",
-        "seven": "MySQL, and Post",
-        "eight": "I'm always eage"
+    "subtitle1": "Developer with experience in the PHP (Laravel), JavaScript (React, Vue, Node.js), and Python (Django) ecosystems. Specialized in transactional systems architecture, integration of multiple global payment gateways, and deployment on AWS infrastructure with Docker.",
+    "subtitle2": "I have led projects ranging from operational management platforms and accounting systems to assistive hardware solutions and AI automation.",
+    "subtitle3": "I am passionate about solving complex problems and building solutions that have a real impact. My approach combines technical excellence with clear communication, ensuring that every project is not only functional but also scalable and easy to maintain.",
+    "buttons": {
+      "download": "Download CV",
+      "contact": "Contact Me"
+    },
+    "stats": {
+      "experience": {
+        "value": "+2",
+        "label": "years of experience"
       },
-      "second": {
-        "one": "er with experience in creating intuitive, responsive web interfaces.",
-        "two": "React, Next.js, and Typescript, focusing on delivering a smooth",
-        "three": "r experience. I like to pay attention to detail, stay up to date with new ",
-        "four": "d always look for the best solution for each project.",
-        "five": "",
-        "six": "edge in backend development with Node.js, NestJS, MongoDB,",
-        "seven": "greSQL, which I use as a complement when the project requires it.",
-        "eight": "r to keep learning and growing on this path."
+      "projects": {
+        "value": "+7",
+        "label": "projects finished"
+      },
+      "commits": {
+        "value": "+300",
+        "label": "commits this year"
       }
+    }
+  },
+  "technologies_section": {
+    "title": "Technologies",
+    "subtitle": "The tools and frameworks I use to bring ideas to life.",
+    "frontend_ecosystem": "Frontend Ecosystem",
+    "backend_ecosystem": "Backend Ecosystem",
+    "infra_tools": "Infrastructure & Tools"
+  },
+  "experience_section": {
+    "title": "Experience",
+    "subtitle": "My professional journey and freelance projects.",
+    "corporate": "Corporate",
+    "freelance": "Freelance",
+    "duration_suffix": "total duration",
+    "button": "Get In Touch",
+    "view_details": "View Details",
+    "to_be_continued": "To be continued...",
+    "technologies_used": "Technologies Used"
+  },
+  "projects_section": {
+    "title": "Projects",
+    "subtitle": "Selected works that showcase my skills and passion.",
+    "filter_all": "All",
+    "filter_by": "Filter by"
+  },
+  "services_section": {
+    "title": "Services",
+    "subtitle": "What I can build for you — from idea to production.",
+    "web_dev": {
+      "title": "Web Development",
+      "description": "Custom web applications built with modern frameworks like React, Vue, and Laravel. From simple landing pages to complex platforms."
+    },
+    "ecommerce": {
+      "title": "E-Commerce",
+      "description": "Full-featured online stores with payment gateway integrations, inventory management, and seamless user experiences."
+    },
+    "mobile": {
+      "title": "Mobile Apps",
+      "description": "Cross-platform mobile applications using React Native. Native performance with a shared codebase for iOS and Android."
+    },
+    "api": {
+      "title": "API & Backend",
+      "description": "Robust RESTful APIs and backend systems with Node.js, Laravel, or Django. Secure, scalable, and well-documented."
+    },
+    "cloud": {
+      "title": "Cloud & DevOps",
+      "description": "Deployment and infrastructure management on AWS using Docker and CI/CD pipelines. Ensuring reliability and scalability."
+    },
+    "ui": {
+      "title": "UI/UX Design",
+      "description": "Clean, modern interfaces designed with user experience in mind. Prototypes, design systems, and pixel-perfect implementations."
+    }
+  },
+  "contact_section": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind? Let's work together to create something beautiful.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "button_send": "Send Message",
+    "button_sending": "Sending..."
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Oops! Page not found",
+    "message": "The page you are looking for doesn't exist or has been moved.",
+    "button": "Back to Home"
+  },
+  "timeline_section": {
+    "title": "My Journey",
+    "subtitle": "The milestones that shaped who I am as a developer."
+  },
+  "timeline": {
+    "born": {
+      "title": "Born in Argentina 🇦🇷",
+      "description": "Born in Corral de Bustos, Córdoba, Argentina. From an early age I was drawn to technology, video games, and building things."
+    },
+    "first_code": {
+      "title": "First Lines of Code",
+      "description": "Discovered programming through game modding and simple scripts. That curiosity quickly became a passion."
+    },
+    "started_studying": {
+      "title": "Started a Technical Degree",
+      "description": "Enrolled in a Technical Degree in Systems Analysis, building a solid foundation in programming, databases, and software development."
+    },
+    "first_job": {
+      "title": "First Professional Role",
+      "description": "Joined BeCode as a Fullstack Developer, working on e-commerce and social platforms with React, Node.js and MySQL."
+    },
+    "freelance": {
+      "title": "Going Freelance",
+      "description": "Started taking on independent projects — landing pages, management systems, and e-commerce platforms for local businesses."
+    },
+    "international": {
+      "title": "International Projects",
+      "description": "Worked with MDAbroad, building transactional platforms used across multiple countries with complex payment gateway integrations."
+    },
+    "now": {
+      "title": "Building the Future",
+      "description": "Focused on scalable fullstack solutions, open to exciting new projects and collaborations worldwide."
+    }
+  },
+  "experience": {
+    "becode": {
+      "role": "Fullstack Developer",
+      "description": "At BeCode I worked as a full stack developer, participating in the development of an e-commerce web app and an Instagram-like mobile app, using React.js, Node.js and MySQL."
+    },
+    "byron": {
+      "role": "Frontend Developer",
+      "description": "I developed the landing page and the application for OrdenApp, a comprehensive platform for restaurants that covers both the Backoffice and the Digital Menu."
+    },
+    "mdabroad": {
+      "role": "Fullstack Developer",
+      "description": "I developed and optimized a transactional platform using PHP and Laravel, managing data persistence with MySQL."
+    },
+    "ceacus": {
+      "role": "Fullstack Developer",
+      "description": "I developed the companion mobile application for a wearable device (glasses) focused on assisting people with disabilities."
+    },
+    "salvatore": {
+      "role": "Salvatore Barber Shop",
+      "description": "Design and development of the website for Salvatore Men's Club."
+    },
+    "vannay_system": {
+      "role": "Vannay System",
+      "description": "Development of a comprehensive client management and corporate accounting system."
+    },
+    "corral_plagas": {
+      "role": "Corral Plagas",
+      "description": "Landing page and registration for the International Training Seminar for Pest Control companies."
+    },
+    "gildo": {
+      "role": "Gildo Regionales",
+      "description": "E-commerce specialized in the sale of boutique wines selected for quality and tradition."
+    },
+    "la_feria": {
+      "role": "La Feria Multieventos",
+      "description": "Promotional platform and access sales system for exclusive +25 events."
+    },
+    "juan_carlos": {
+      "role": "Juan Carlos Mattalia",
+      "description": "Personal portfolio and virtual interactive gallery for visual artist Juan Carlos Mattalia."
+    },
+    "sporting": {
+      "role": "Sporting V2 System",
+      "description": "Advanced internal system for the comprehensive management of the Sporting Club."
+    }
+  },
+  "projects_list": {
+    "salvatore": {
+      "description": "Minimalist site and digital experience for Salón Salvatore."
+    },
+    "vannay": {
+      "description": "Advanced system for client management and financial accounting."
+    },
+    "corral": {
+      "description": "Registrations, tickets and payments for international training."
+    },
+    "gildo": {
+      "description": "E-commerce for high-quality wines and personalized box assembly."
+    },
+    "la_feria": {
+      "description": "Web platform for the promotion and access to exclusive events."
+    },
+    "juan_carlos": {
+      "description": "Virtual art gallery and hyper-minimalist interactive portfolio."
+    },
+    "sporting": {
+      "description": "Modern integral management system for the Sporting Club."
+    }
+  },
+  "process_section": {
+    "title": "Work Process",
+    "subtitle": "How I turn ideas into production-ready products, step by step.",
+    "steps": {
+      "discovery": {
+        "title": "Discovery",
+        "description": "Understanding your goals, audience, and requirements through clear conversations."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Wireframes, prototypes and design systems crafted for clarity and aesthetics."
+      },
+      "development": {
+        "title": "Development",
+        "description": "Clean, scalable code built with the right stack for your project needs."
+      },
+      "testing": {
+        "title": "Testing",
+        "description": "Thorough QA across devices and browsers before anything goes live."
+      },
+      "launch": {
+        "title": "Launch",
+        "description": "Smooth deployment, monitoring, and ongoing support after go-live."
+      }
+    }
+  },
+  "certifications_section": {
+    "title": "Certifications",
+    "subtitle": "Academic credentials that back up my technical skills."
+  },
+  "certifications": {
+    "teclab": {
+      "title": "Higher Technical Degree in Programming",
+      "description": "Completed the Tecnicatura Superior en Programación at Teclab — Instituto Técnico Superior, obtaining the title of Técnico Superior en Programación."
+    },
+    "coderhouse": {
+      "title": "Frontend React Development Career",
+      "description": "27-week intensive career at Coderhouse covering React, JavaScript, CSS and modern frontend best practices."
+    },
+    "webexperto": {
+      "title": "Backend Development Bootcamp",
+      "description": "200-hour bootcamp at Webexperto focused on server-side development, APIs, databases and deployment."
     }
   }
 }

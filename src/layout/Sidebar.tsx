@@ -8,13 +8,13 @@ import { Icon } from "@/components/common/Icon";
 
 export const Sidebar = () => {
   return (
-    <section className="hidden fixed left-0 h-screen z-20 xl:flex flex-col gap-6 items-start justify-center p-6 mix-blend-difference">
+    <section className="hidden fixed left-0 h-screen z-20 xl:flex flex-col gap-6 items-start justify-center p-6">
       <div className="group flex items-center gap-4 relative cursor-pointer">
         <Icon
           redirect="https://www.linkedin.com/in/alejo-mattalia/"
           icon={<LinkedinIcon color="currentColor" width="20px" height="20px" />}
         />
-        <span className="opacity-0 -translate-x-4 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 text-zinc-300 text-sm whitespace-nowrap absolute left-14 pointer-events-none">
+        <span className="opacity-0 -translate-x-4 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 text-subtle text-sm font-medium whitespace-nowrap absolute left-14 pointer-events-none">
           alejo-mattalia
         </span>
       </div>
@@ -24,7 +24,7 @@ export const Sidebar = () => {
           redirect="https://github.com/AlejoMattalia"
           icon={<GithubIcon color="currentColor" width="20px" height="20px" />}
         />
-        <span className="opacity-0 -translate-x-4 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 text-zinc-300 text-sm whitespace-nowrap absolute left-14 pointer-events-none">
+        <span className="opacity-0 -translate-x-4 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 text-subtle text-sm font-medium whitespace-nowrap absolute left-14 pointer-events-none">
           AlejoMattalia
         </span>
       </div>
@@ -34,7 +34,7 @@ export const Sidebar = () => {
           redirect="https://wa.me/5493468530707"
           icon={<WhatsappIcon color="currentColor" width="20px" height="20px" />}
         />
-        <span className="opacity-0 -translate-x-4 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 text-zinc-300 text-sm whitespace-nowrap absolute left-14 pointer-events-none">
+        <span className="opacity-0 -translate-x-4 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 text-subtle text-sm font-medium whitespace-nowrap absolute left-14 pointer-events-none">
           +54 9 3468 530707
         </span>
       </div>
@@ -44,7 +44,7 @@ export const Sidebar = () => {
           redirect="mailto:alejoomattalia@gmail.com"
           icon={<GmailIcon color="currentColor" width="20px" height="20px" />}
         />
-        <span className="opacity-0 -translate-x-4 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 text-zinc-300 text-sm whitespace-nowrap absolute left-14 pointer-events-none">
+        <span className="opacity-0 -translate-x-4 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 text-subtle text-sm font-medium whitespace-nowrap absolute left-14 pointer-events-none">
           alejoomattalia@gmail.com
         </span>
       </div>
@@ -54,7 +54,7 @@ export const Sidebar = () => {
           redirect="https://www.instagram.com/alejomattalia/"
           icon={<InstagramIcon color="currentColor" width="20px" height="20px" />}
         />
-        <span className="opacity-0 -translate-x-4 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 text-zinc-300 text-sm whitespace-nowrap absolute left-14 pointer-events-none">
+        <span className="opacity-0 -translate-x-4 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 text-subtle text-sm font-medium whitespace-nowrap absolute left-14 pointer-events-none">
           @alejomattalia
         </span>
       </div>
@@ -64,7 +64,7 @@ export const Sidebar = () => {
           redirect="https://www.facebook.com/alejomattalia/"
           icon={<FacebookIcon color="currentColor" width="20px" height="20px" />}
         />
-        <span className="opacity-0 -translate-x-4 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 text-zinc-300 text-sm whitespace-nowrap absolute left-14 pointer-events-none">
+        <span className="opacity-0 -translate-x-4 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 text-subtle text-sm font-medium whitespace-nowrap absolute left-14 pointer-events-none">
           alejomattalia
         </span>
       </div>

@@ -9,8 +9,11 @@ import { CustomButtom } from "@/components/common/CustomButtom";
 import { Icon } from "@/components/common/Icon";
 import { downloadCV, redirectWhatsapp } from "@/utils/utils";
 import { motion } from "framer-motion";
+import { useCustomTranslation } from "@/hooks/use-custom-translation";
 
 export const Info = () => {
+  const { t } = useCustomTranslation();
+
   return (
     <motion.div
       initial={{ x: 1000, opacity: 0 }}
@@ -18,84 +21,71 @@ export const Info = () => {
       transition={{ delay: 0.5, duration: 1 }}
       className="flex flex-col items-start justify-center w-full max-w-[320px]"
     >
-      <h1 className="text-white text-4xl font-bold inline-block ">
+      <h1 className="text-foreground text-4xl font-bold inline-block transition-colors">
         ALEJO <BrilliantTitle title="MATTALIA" />
       </h1>
 
-      <h2 className="text-white text-xl font-bold mt-1">
-        <span className="text-primary">D</span>ESARROLLADOR{" "}
-        <span className="text-primary">F</span>RONTEND
+      <h2 className="text-subtle text-xl font-bold mt-1 transition-colors">
+        {t("home.title.twoLetter")} {t("home.title.three") || "FULLSTACK DEVELOPER"}
       </h2>
 
-      <p className="text-white text-sm mt-5">
-        Desarrollador Frontend con experiencia en la creación de interfaces web,
-        intuitivas y responsivas. Trabajo principalmente con React, Next.js y
-        Typescript, enfocándome en ofrecer una experiencia de usuario fluida y
-        atractiva. Me gusta cuidar los detalles, mantenerme actualizado con
-        nuevas tecnologías y siempre buscar la mejor solución posible para cada
-        proyecto.
-        <br /> <br />
-        También tengo conocimientos en backend con Node.js, NestJS, MongoDB,
-        MySQL y PostgreSQL, los cuales utilizo como complemento cuando el
-        proyecto lo requiere. Siempre estoy con ganas de seguir aprendiendo y
-        creciendo en este camino.
-      </p>
+      <div className="text-muted text-sm mt-5 space-y-4 transition-colors">
+        <p>{t("home.subtitle1")}</p>
+        <p>{t("home.subtitle2")}</p>
+        <p>{t("home.subtitle3")}</p>
+      </div>
 
-      <div className="flex gap-5 mt-6">
+      <div className="flex gap-4 mt-8 w-full">
         <CustomButtom
-          title="Descargar CV"
+          title={t("home.buttons.download")}
           variant="outlined"
           handleClick={downloadCV}
+          size="small"
         />
 
         <CustomButtom
-          title="Contactame"
+          title={t("home.buttons.contact")}
           variant="contained"
           handleClick={redirectWhatsapp}
+          size="small"
         />
       </div>
 
-      <footer className="flex gap-3 mt-10">
+      <footer className="flex gap-3 mt-10 flex-wrap">
         <Icon
           redirect="https://www.linkedin.com/in/alejo-mattalia/"
-          icon={<LinkedinIcon color="#cccccc" width="30px" height="30px" />}
+          icon={<LinkedinIcon color="currentColor" width="24px" height="24px" />}
           title="Linkedin"
-          sizeBackground="40px"
         />
 
         <Icon
           redirect="https://github.com/AlejoMattalia"
-          icon={<GithubIcon color="#cccccc" width="30px" height="30px" />}
+          icon={<GithubIcon color="currentColor" width="24px" height="24px" />}
           title="Github"
-          sizeBackground="40px"
         />
 
         <Icon
           redirect="https://wa.me/5493468530707"
-          icon={<WhatsappIcon color="#cccccc" width="30px" height="30px" />}
+          icon={<WhatsappIcon color="currentColor" width="24px" height="24px" />}
           title="Whatsapp"
-          sizeBackground="40px"
         />
 
         <Icon
           redirect="mailto:alejoomattalia@gmail.com"
-          icon={<GmailIcon color="#cccccc" width="30px" height="30px" />}
+          icon={<GmailIcon color="currentColor" width="24px" height="24px" />}
           title="Gmail"
-          sizeBackground="40px"
         />
 
         <Icon
           redirect="https://www.instagram.com/alejomattalia/"
-          icon={<InstagramIcon color="#cccccc" width="30px" height="30px" />}
+          icon={<InstagramIcon color="currentColor" width="24px" height="24px" />}
           title="Instagram"
-          sizeBackground="40px"
         />
 
         <Icon
           redirect="https://www.facebook.com/alejomattalia/"
-          icon={<FacebookIcon color="#cccccc" width="30px" height="30px" />}
+          icon={<FacebookIcon color="currentColor" width="24px" height="24px" />}
           title="Facebook"
-          sizeBackground="40px"
         />
       </footer>
     </motion.div>

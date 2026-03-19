@@ -3,7 +3,7 @@ import { useCustomTranslation } from "@/hooks/use-custom-translation";
 import { motion } from "framer-motion";
 
 export const ContainerTwo = () => {
-  const t = useCustomTranslation();
+  const { t } = useCustomTranslation();
 
   return (
     <motion.div
