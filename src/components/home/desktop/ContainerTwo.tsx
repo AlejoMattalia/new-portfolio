@@ -1,7 +1,10 @@
 import { BrilliantTitle } from "@/components/common/BrilliantTitle";
+import { useCustomTranslation } from "@/hooks/use-custom-translation";
 import { motion } from "framer-motion";
 
 export const ContainerTwo = () => {
+  const t = useCustomTranslation();
+
   return (
     <motion.div
       initial={{ x: 1000, opacity: 0 }}
@@ -14,31 +17,33 @@ export const ContainerTwo = () => {
       </h1>
 
       <h2 className="text-white text-3xl font-bold mt-5 relative right-1 bottom-0.5">
-        OLLADOR <span className="text-primary">F</span>RONTEND
+        {t("home.title.two")}{" "}
+        <span className="text-primary">{t("home.title.twoLetter")}</span>
+        {t("home.title.three")}
       </h2>
 
       <p className="text-white mt-9.5 flex flex-col">
         <span className="relative right-[5px]">
-          ntend con experiencia en la creación de interfaces web, intuitivas
+          {t("home.text.second.one")}
         </span>
-        <span>
-          bajo principalmente con React, Next.js y Typescript, enfocándome
+        <span>{t("home.text.second.two")}</span>
+        <span className="relative right-[3px]">
+          {t("home.text.second.three")}
         </span>
         <span className="relative right-[5px]">
-          periencia de usuario fluida y atractiva. Me gusta cuidar los detalles,
+          {t("home.text.second.four")}
         </span>
-        <span className="relative right-[6px]">
-          alizado con nuevas tecnologías y siempre buscar la mejor solución
+        <span className="relative left-[1px]">
+          {t("home.text.second.five")}
         </span>
-        <span className="relative left-[1px]">proyecto.</span>
-        <span className="mt-4 relative right-[5px]">
-          nocimientos en backend con Node.js, NestJS, MongoDB, MySQL y{" "}
+        <span className="mt-4 relative right-[4px]">
+          {t("home.text.second.six")}{" "}
         </span>
         <span className="relative right-[1px]">
-          uales utilizo como complemento cuando el proyecto lo requiere.
+          {t("home.text.second.seven")}
         </span>
-        <span className="relative right-[6px]">
-          n ganas de seguir aprendiendo y creciendo en este camino.
+        <span className="relative right-[8px]">
+          {t("home.text.second.eight")}
         </span>
       </p>
     </motion.div>

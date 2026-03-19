@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { toast } from "sonner";
@@ -13,6 +12,7 @@ export const Contact = () => {
     touched,
     handleBlur,
     resetForm,
+    isSubmitting,
   } = useFormik({
     initialValues: {
       name: "",
@@ -21,16 +21,16 @@ export const Contact = () => {
       message: "",
     },
     validationSchema: Yup.object({
-      name: Yup.string().required("El nombre es requerido"),
+      name: Yup.string().required("Name is required"),
       email: Yup.string()
-        .email("Email inválido")
-        .required("El email es requerido"),
+        .email("Invalid email")
+        .required("Email is required"),
       phone: Yup.string()
-        .matches(/^[0-9]+$/, "El teléfono solo debe contener números")
-        .min(6, "El teléfono es muy corto")
-        .max(15, "El teléfono es muy largo")
-        .required("El teléfono es requerido"),
-      message: Yup.string().required("El mensaje es requerido"),
+        .matches(/^[0-9]+$/, "Phone must contain only numbers")
+        .min(6, "Phone too short")
+        .max(15, "Phone too long")
+        .required("Phone is required"),
+      message: Yup.string().required("Message is required"),
     }),
     onSubmit: async (values) => {
       try {
@@ -41,104 +41,114 @@ export const Contact = () => {
           import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         );
 
-        toast.success("Correo enviado correctamente");
+        toast.success("Message sent successfully");
         resetForm();
       } catch (error) {
         console.log(error);
-        toast.error("Error al enviar el correo");
+        toast.error("Error sending message");
       }
     },
   });
 
   return (
-    <section className="w-full max-w-[950px] mx-auto relative z-20 mt-20 lg:mt-28 px-6 flex flex-col items-center justify-center" id="contact">
-      <h1 className="text-3xl font-bold text-center mb-10 text-white">
-        CONTACTO
-      </h1>
+    <section
+      className="w-full max-w-[1200px] mx-auto z-20 relative mt-32 mb-32 px-6 md:px-12 flex flex-col items-center justify-center"
+      id="contact"
+    >
+      <div className="text-center mb-16 w-full max-w-[600px] mx-auto">
+        <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">Get In Touch</h2>
+        <p className="text-zinc-400 mt-4">Have a project in mind? Let's work together to create something beautiful.</p>
+      </div>
 
-      <form
-        className="flex flex-col gap-5 w-full sm:w-2/3"
-        onSubmit={handleSubmit}
-      >
-        <div className="flex flex-col">
-          <input
-            type="text"
-            placeholder="Nombre"
-            name="name"
-            value={values.name}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={`bg-[#2a2a2a] text-white placeholder-gray-400 border rounded-lg px-4 py-3 focus:outline-none transition ${
-              errors.name && touched.name
-                ? "border-red-500"
-                : "border-gray-600 focus:border-primary"
-            }`}
-          />
-          {errors.name && touched.name && (
-            <p className="text-red-500 text-xs mt-1">{errors.name}</p>
-          )}
-        </div>
+      <div className="w-full max-w-[600px] bg-zinc-900/20 backdrop-blur-sm border border-zinc-800/50 rounded-3xl p-8 md:p-12">
+        <form className="flex flex-col gap-6 w-full" onSubmit={handleSubmit}>
 
-        <div className="flex flex-col">
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            value={values.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={`bg-[#2a2a2a] text-white placeholder-gray-400 border rounded-lg px-4 py-3 focus:outline-none transition ${
-              errors.email && touched.email
-                ? "border-red-500"
-                : "border-gray-600 focus:border-primary"
-            }`}
-          />
-          {errors.email && touched.email && (
-            <p className="text-red-500 text-xs mt-1">{errors.email}</p>
-          )}
-        </div>
+          <div className="flex flex-col gap-1">
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`bg-zinc-900/50 text-white placeholder-zinc-500 border rounded-xl px-5 py-4 focus:outline-none transition-colors ${errors.name && touched.name
+                ? "border-red-500/50 focus:border-red-500"
+                : "border-zinc-800 focus:border-zinc-500"
+                }`}
+            />
+            {errors.name && touched.name && (
+              <p className="text-red-400/80 text-xs ml-1 mt-1 font-medium">{errors.name}</p>
+            )}
+          </div>
 
-        <div className="flex flex-col">
-          <input
-            type="text"
-            placeholder="Teléfono"
-            name="phone"
-            value={values.phone}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={`bg-[#2a2a2a] text-white placeholder-gray-400 border rounded-lg px-4 py-3 focus:outline-none transition ${
-              errors.phone && touched.phone
-                ? "border-red-500"
-                : "border-gray-600 focus:border-primary"
-            }`}
-          />
-          {errors.phone && touched.phone && (
-            <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
-          )}
-        </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+            <div className="flex flex-col gap-1 w-full">
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={`bg-zinc-900/50 text-white placeholder-zinc-500 border rounded-xl px-5 py-4 focus:outline-none transition-colors ${errors.email && touched.email
+                  ? "border-red-500/50 focus:border-red-500"
+                  : "border-zinc-800 focus:border-zinc-500"
+                  }`}
+              />
+              {errors.email && touched.email && (
+                <p className="text-red-400/80 text-xs ml-1 mt-1 font-medium">{errors.email}</p>
+              )}
+            </div>
 
-        <div className="flex flex-col">
-          <textarea
-            placeholder="Mensaje"
-            name="message"
-            value={values.message}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={`bg-[#2a2a2a] text-white placeholder-gray-400 border rounded-lg px-4 py-3 h-32 resize-none focus:outline-none transition ${
-              errors.message && touched.message
-                ? "border-red-500"
-                : "border-gray-600 focus:border-primary"
-            }`}
-          ></textarea>
-          {errors.message && touched.message && (
-            <p className="text-red-500 text-xs mt-1">{errors.message}</p>
-          )}
-        </div>
+            <div className="flex flex-col gap-1 w-full">
+              <input
+                type="text"
+                placeholder="Phone"
+                name="phone"
+                value={values.phone}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={`bg-zinc-900/50 text-white placeholder-zinc-500 border rounded-xl px-5 py-4 focus:outline-none transition-colors ${errors.phone && touched.phone
+                  ? "border-red-500/50 focus:border-red-500"
+                  : "border-zinc-800 focus:border-zinc-500"
+                  }`}
+              />
+              {errors.phone && touched.phone && (
+                <p className="text-red-400/80 text-xs ml-1 mt-1 font-medium">{errors.phone}</p>
+              )}
+            </div>
+          </div>
 
-        <Button type="submit" variant="contained">
-          Enviar
-        </Button>
-      </form>
+          <div className="flex flex-col gap-1">
+            <textarea
+              placeholder="Message"
+              name="message"
+              value={values.message}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={`bg-zinc-900/50 text-white placeholder-zinc-500 border rounded-xl px-5 py-4 h-40 resize-none focus:outline-none transition-colors ${errors.message && touched.message
+                ? "border-red-500/50 focus:border-red-500"
+                : "border-zinc-800 focus:border-zinc-500"
+                }`}
+            />
+            {errors.message && touched.message && (
+              <p className="text-red-400/80 text-xs ml-1 mt-1 font-medium">{errors.message}</p>
+            )}
+          </div>
+
+          <div className="w-full mt-4">
+            {/* Since CustomButtom takes handleClick, we use a regular button to submit or modify CustomButtom to accept type="submit". 
+                I will just render a styled submit button here directly to integrate with Formik cleanly. */}
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-white text-black font-semibold rounded-xl px-6 py-4 hover:bg-zinc-200 transition-colors disabled:opacity-50"
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </button>
+          </div>
+        </form>
+      </div>
     </section>
   );
 };

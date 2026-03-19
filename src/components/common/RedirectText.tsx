@@ -18,11 +18,12 @@ export const RedirectText = ({
   };
 
   return (
-    <div
+    <button
       onClick={handleClick}
-      className="text-white font-bold text-sm cursor-pointer p-4 px-5 hover:bg-gray-100/10 rounded transition duration-100 ease-in-out"
+      className="text-zinc-400 font-medium text-sm hover:text-white transition-colors duration-300 relative group lowercase"
     >
       {text}
-    </div>
+      <span className="absolute -bottom-1.5 left-0 w-full h-[1px] bg-white transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100" />
+    </button>
   );
 };

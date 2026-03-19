@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { RedirectText } from "../components/common/RedirectText";
-import { Icon } from "../components/common/Icon";
-import { MenuIcon } from "@/assets/icons/MenuIcon";
 import { motion, AnimatePresence } from "framer-motion";
 import { CloseIcon } from "@/assets/icons/CloseIcon";
+import { MenuIcon } from "@/assets/icons/MenuIcon";
+import { useCustomTranslation } from "@/hooks/use-custom-translation";
 
 export const Navbar = () => {
+  const t = useCustomTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 0);
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -26,88 +27,90 @@ export const Navbar = () => {
   return (
     <>
       {/* Desktop Navbar */}
-      <section
-        className={`hidden fixed z-50 lg:flex items-center justify-center w-full p-4 transition-all duration-300 ${
-          scrolled ? "backdrop-blur-md bg-black/30" : ""
-        }`}
-      >
-        <nav
-          className={`border border-primary rounded-xl flex transition-all duration-300 ${
-            scrolled ? "shadow-lg bg-black/60 backdrop-blur-sm" : ""
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        className={`hidden lg:flex fixed top-0 w-full z-50 transition-all duration-500 ${scrolled
+          ? "py-4 bg-[#09090b]/80 backdrop-blur-xl"
+          : "py-6 bg-transparent"
           }`}
-        >
-          <RedirectText text="TECNOLOGÍAS" redirect="technologies" />
-          <RedirectText text="EXPERIENCIA" redirect="experience" />
-          <RedirectText text="PROYECTOS" redirect="projects" />
-          <RedirectText text="CONTACTO" redirect="contact" />
-        </nav>
-      </section>
+      >
+        <div className="w-full max-w-[1200px] mx-auto px-12 flex items-center justify-between">
+          <div className="text-xl font-bold text-white tracking-tighter">
+            AM<span className="text-zinc-500">.</span>
+          </div>
+
+          <nav className="flex items-center gap-8">
+            <RedirectText text={t("navbar.technologies")} redirect="technologies" />
+            <RedirectText text={t("navbar.experience")} redirect="experience" />
+            <RedirectText text={t("navbar.projects")} redirect="projects" />
+            <RedirectText text={t("navbar.contact")} redirect="contact" />
+          </nav>
+        </div>
+      </motion.header>
 
       {/* Mobile Navbar */}
-      <section className="flex items-center justify-center w-full p-4 lg:hidden">
-        <div
-          className={`fixed h-24 z-50 w-full flex items-center justify-center ${
-            scrolled ? "backdrop-blur-md bg-black/30" : ""
+      <header
+        className={`fixed top-0 w-full z-50 lg:hidden transition-all duration-500 ${scrolled || openMenu
+          ? "bg-[#09090b]/80 backdrop-blur-xl border-b border-zinc-800/50"
+          : "bg-transparent"
           }`}
-        >
-          <div className="relative top-4">
-            <Icon
-              onClick={handleOpenMenu}
-              icon={
-                openMenu ? (
-                  <CloseIcon width="40px" height="40px" color="#fff" />
-                ) : (
-                  <MenuIcon width="40px" height="40px" color="#fff" />
-                )
-              }
-              sizeBackground="40px"
-            />
+      >
+        <div className="flex items-center justify-between px-6 py-4">
+          <div className="text-xl font-bold text-white tracking-tighter relative z-50">
+            AM<span className="text-zinc-500">.</span>
           </div>
+
+          <button
+            onClick={handleOpenMenu}
+            className="relative z-50 p-2 -mr-2 text-white hover:text-zinc-300 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {openMenu ? (
+              <CloseIcon width="28px" height="28px" color="currentColor" />
+            ) : (
+              <MenuIcon width="28px" height="28px" color="currentColor" />
+            )}
+          </button>
         </div>
 
-        {/* Overlay con AnimatePresence */}
+        {/* Mobile Menu Overlay */}
         <AnimatePresence>
           {openMenu && (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed top-0 left-0 w-full h-screen bg-black/80 z-30"
-              onClick={handleOpenMenu}
+              initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+              animate={{ opacity: 1, backdropFilter: "blur(16px)" }}
+              exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 min-h-screen bg-[#09090b]/95 z-40 flex flex-col pt-24 px-6"
             >
-              <motion.nav
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -100, opacity: 0 }}
-                transition={{ duration: 0.4 }}
-                className="bg-black w-full p-6 flex flex-col items-start border-b-2 border-gray-500 rounded-b-4xl text-white pt-16 z-40"
-                onClick={(e) => e.stopPropagation()}
-              >
+              <nav className="flex flex-col gap-6 mt-8">
                 <RedirectText
-                  text="TECNOLOGÍAS"
+                  text={t("navbar.technologies")}
                   redirect="technologies"
                   setOpenMenu={setOpenMenu}
                 />
                 <RedirectText
-                  text="EXPERIENCIA"
+                  text={t("navbar.experience")}
                   redirect="experience"
                   setOpenMenu={setOpenMenu}
                 />
                 <RedirectText
-                  text="PROYECTOS"
+                  text={t("navbar.projects")}
                   redirect="projects"
                   setOpenMenu={setOpenMenu}
                 />
                 <RedirectText
-                  text="CONTACTO"
+                  text={t("navbar.contact")}
                   redirect="contact"
                   setOpenMenu={setOpenMenu}
                 />
-              </motion.nav>
+              </nav>
             </motion.div>
           )}
         </AnimatePresence>
-      </section>
+      </header>
     </>
   );
 };

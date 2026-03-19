@@ -1,0 +1,39 @@
+{
+  "navbar": {
+    "technologies": "TECHNOLOGIES",
+    "experience": "EXPERIENCE",
+    "projects": "PROJECTS",
+    "contact": "CONTACT"
+  },
+  "home": {
+    "title": {
+      "oneLetter": "F",
+      "twoLetter": "D",
+      "one": "RONTE",
+      "two": "ND",
+      "three": "EVELOPER"
+    },
+    "text": {
+      "first": {
+        "one": "Frontend develop",
+        "two": "I mainly work with",
+        "three": "and attractive use",
+        "four": "technologies, an",
+        "five": "",
+        "six": "I also have knowl",
+        "seven": "MySQL, and Post",
+        "eight": "I'm always eage"
+      },
+      "second": {
+        "one": "er with experience in creating intuitive, responsive web interfaces.",
+        "two": "React, Next.js, and Typescript, focusing on delivering a smooth",
+        "three": "r experience. I like to pay attention to detail, stay up to date with new ",
+        "four": "d always look for the best solution for each project.",
+        "five": "",
+        "six": "edge in backend development with Node.js, NestJS, MongoDB,",
+        "seven": "greSQL, which I use as a complement when the project requires it.",
+        "eight": "r to keep learning and growing on this path."
+      }
+    }
+  }
+}

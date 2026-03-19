@@ -1,48 +1,15 @@
 import { IconProps } from "@/interface/icon";
-import IconButton from "@mui/material/IconButton";
-import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 
-export const Icon = ({
-  icon,
-  title,
-  redirect,
-  sizeBackground = "48px",
-  onClick,
-}: IconProps) => {
+export const Icon = ({ icon, redirect, onClick }: IconProps) => {
   return (
-    <a target="_blank" rel="noreferrer" href={redirect}>
-      <Tooltip
-        title={title}
-        arrow
-        placement="top"
-        slotProps={{
-          popper: {
-            sx: {
-              [`&.${tooltipClasses.popper}[data-popper-placement*="top"] .${tooltipClasses.tooltip}`]:
-                {
-                  marginBottom: "10px",
-                },
-            },
-          },
-        }}
-      >
-        <IconButton
-          onClick={onClick}
-          sx={(theme) => ({
-            backgroundColor: theme.palette.primary.main,
-            color: "#fff",
-            borderRadius: "50%",
-            width: sizeBackground,
-            height: sizeBackground,
-            transition: "background-color 0.3s ease",
-            "&:hover": {
-              backgroundColor: theme.palette.primary.dark, // mismo hover que un <Button />
-            },
-          })}
-        >
-          {icon}
-        </IconButton>
-      </Tooltip>
+    <a
+      target="_blank"
+      rel="noreferrer"
+      href={redirect}
+      onClick={onClick}
+      className="w-10 h-10 rounded-full flex items-center justify-center bg-zinc-800/30 backdrop-blur-md border border-zinc-700/50 text-zinc-400 group-hover:bg-white group-hover:text-black group-hover:border-white transition-all duration-300"
+    >
+      {icon}
     </a>
   );
 };

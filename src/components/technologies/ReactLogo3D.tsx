@@ -15,10 +15,8 @@ export default function React3DLogo() {
 
   return (
     <div
-      className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]"
-      style={{
-        cursor: isDragging ? "grabbing" : "grab",
-      }}
+      className="w-full h-full flex items-center justify-center opacity-90 transition-opacity hover:opacity-100"
+      style={{ cursor: isDragging ? "grabbing" : "grab" }}
       onMouseDown={() => setIsDragging(true)}
       onMouseUp={() => setIsDragging(false)}
       onMouseLeave={() => setIsDragging(false)}

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const ButtonScrollTop = () => {
-  const [isHovered, setIsHovered] = useState(false);
   const [showButton, setShowButton] = useState(false);
 
   const handleScroll = () => {
@@ -31,16 +30,12 @@ export const ButtonScrollTop = () => {
           exit={{ opacity: 0, scale: 0.7 }}
           transition={{ duration: 0.3 }}
           onClick={handleScroll}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          className={`fixed bottom-3 sm:bottom-5 right-3 sm:right-5 cursor-pointer w-[30px] sm:w-[50px] h-[30px] sm:h-[50px] flex items-center justify-center rounded-full z-50 transition-colors duration-300 ${
-            isHovered ? "bg-white" : "bg-primary"
-          }`}
+          className="group fixed bottom-6 sm:bottom-10 right-6 sm:right-10 cursor-pointer w-12 h-12 flex items-center justify-center rounded-full z-50 transition-all duration-300 bg-zinc-800/40 backdrop-blur-md border border-zinc-700/50 text-zinc-400 hover:bg-white hover:text-black hover:border-white shadow-lg"
         >
           <ArrowUp
-            width={40}
-            height={40}
-            color={isHovered ? "#8e44ad" : "#ffffff"}
+            width={24}
+            height={24}
+            color="currentColor"
           />
         </motion.div>
       )}

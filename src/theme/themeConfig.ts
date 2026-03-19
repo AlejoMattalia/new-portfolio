@@ -5,8 +5,12 @@ export const theme = createTheme({
   palette: {
     mode: "dark", // ✅ Esto activa el modo oscuro
     primary: {
-      main: "#8e44ad",
-      contrastText: "#fff",
+      main: "#ffffff",
+      contrastText: "#000000",
+    },
+    background: {
+      default: "#09090b",
+      paper: "#18181b",
     },
   },
 });

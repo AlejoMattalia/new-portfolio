@@ -1,34 +1,35 @@
 import { arrayOtherTechnologies } from "@/utils/arrays";
 import { motion } from "framer-motion";
 import { ImageTooltip } from "../common/ImageTooltip";
-import { useMediaQuery, useTheme } from "@mui/material";
 
 export const Secondary = () => {
-  const theme = useTheme();
-  const isLg = useMediaQuery(theme.breakpoints.up("lg"));
-  const isSm = useMediaQuery(theme.breakpoints.up("sm")); // 👈 Detectamos si es sm o mayor
-
   return (
     <motion.section
-      className="flex flex-col items-center justify-center w-full gap-10 borde px-10 lg:px-0"
-      initial={isSm ? { opacity: 0, y: 200 } : false} // 👈 Solo animación si sm o más
-      whileInView={isSm ? { opacity: 1, y: 0 } : {}} // 👈 Evitamos efecto en xs
-      viewport={{ once: true }}
-      transition={isSm ? { delay: isLg ? 2 : 0, duration: 1 } : {}} // 👈 Solo transiciones si sm o más
+      className="w-full flex flex-col gap-8 rounded-3xl border border-zinc-800/50 bg-zinc-900/20 backdrop-blur-sm p-8"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, delay: 0.2 }}
     >
-      <p className="text-2xl font-bold text-white">Otras tecnologías</p>
+      <h3 className="text-xl font-semibold text-zinc-300">Infrastructure, Databases & Tools</h3>
 
-      <main className="flex items-center justify-center gap-10 w-full flex-wrap">
+      <div className="flex flex-wrap items-center justify-start gap-6 w-full">
         {arrayOtherTechnologies.map((item, index) => (
-          <ImageTooltip
+          <motion.div
             key={index}
-            image={item.image}
-            title={item.title}
-            size={isLg ? "100" : "70"}
-            placement="top"
-          />
+            whileHover={{ scale: 1.1, y: -5 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="flex items-center justify-center p-4 rounded-2xl bg-zinc-800/20 border border-zinc-700/30 hover:bg-zinc-700/30 transition-colors"
+          >
+            <ImageTooltip
+              image={item.image}
+              title={item.title}
+              size="40"
+              placement="top"
+            />
+          </motion.div>
         ))}
-      </main>
+      </div>
     </motion.section>
   );
 };

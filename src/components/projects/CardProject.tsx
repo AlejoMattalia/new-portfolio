@@ -1,7 +1,8 @@
-import { useState } from "react";
+
 import { GithubIcon } from "@/assets/icons/GithubIcon";
 import { LinkIcon } from "@/assets/icons/LinkIcon";
 import { CardProps } from "@/interface/project";
+import { motion } from "framer-motion";
 
 export const CardProject = ({
   img,
@@ -11,70 +12,72 @@ export const CardProject = ({
   linkRep,
   linkWeb,
 }: CardProps) => {
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
-
-  const toggleOverlay = () => {
-    setIsMobileOpen((prev) => !prev);
-  };
-
   return (
-    <div
-      className="relative w-64 bg-base-100 shadow-xl group overflow-hidden cursor-pointer border border-gray-100 rounded-2xl"
-      onClick={toggleOverlay}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6 }}
+      className="group relative flex flex-col w-full rounded-3xl border border-zinc-800/50 bg-zinc-900/20 backdrop-blur-sm overflow-hidden hover:bg-zinc-800/20 transition-colors"
     >
-      <figure className="w-full h-44 m-0">
+      {/* Image Section */}
+      <div className="w-full h-56 sm:h-64 overflow-hidden relative">
+        <div className="absolute inset-0 bg-zinc-900/20 group-hover:bg-transparent transition-colors z-10" />
         <img
           src={img}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
-      </figure>
+      </div>
 
-      <div
-        className={`absolute inset-0 bg-black bg-opacity-90 transition-opacity duration-300 flex flex-col justify-start items-center text-center px-5 py-3 ${
-          isMobileOpen ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-        }`}
-      >
-        <h2 className="card-title text-[#F4F4F4]">{title}</h2>
-        <p className="text-xs text-[#F4F4F4]">{description}</p>
+      {/* Content Section */}
+      <div className="flex flex-col flex-1 p-6 md:p-8">
+        <div className="flex justify-between items-start gap-4 mb-4">
+          <h3 className="text-xl md:text-2xl font-semibold text-zinc-100 tracking-tight">
+            {title}
+          </h3>
+          <div className="flex items-center gap-3">
+            {linkRep && (
+              <a
+                href={linkRep}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-500 hover:text-zinc-100 transition-colors"
+                aria-label="GitHub Repository"
+              >
+                <GithubIcon width="22px" height="22px" color="currentColor" />
+              </a>
+            )}
+            {linkWeb && (
+              <a
+                href={linkWeb}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-500 hover:text-zinc-100 transition-colors"
+                aria-label="Live Website"
+              >
+                <LinkIcon width="22px" height="22px" color="currentColor" />
+              </a>
+            )}
+          </div>
+        </div>
 
-        <div className="w-full flex items-center justify-center gap-1 mt-5 flex-wrap">
+        <p className="text-sm md:text-base text-zinc-400 leading-relaxed mb-6 flex-1">
+          {description}
+        </p>
+
+        {/* Technologies Tags */}
+        <div className="flex flex-wrap gap-2 mt-auto">
           {technologies?.map((tech, index) => (
-            <p
+            <span
               key={index}
-              className="text-xs border border-primary rounded-xl text-primary font-bold py-0.5 text-center w-24"
+              className="px-3 py-1 text-xs font-medium text-zinc-300 bg-zinc-800/50 rounded-full border border-zinc-700/50 transition-colors group-hover:border-zinc-500/50"
             >
               {tech}
-            </p>
+            </span>
           ))}
         </div>
-
-        <div className="flex items-end justify-end mt-3 gap-2 w-full absolute bottom-1.5 right-1.5">
-          {linkWeb && (
-            <a
-              href={linkWeb}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/icon bg-transparent p-1 rounded-full transition-colors duration-300 hover:bg-[#8e44ad]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <LinkIcon width="20px" height="20px" color="#fff" />
-            </a>
-          )}
-
-          {linkRep && (
-            <a
-              href={linkRep}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/icon bg-transparent p-1 rounded-full transition-colors duration-300 hover:bg-[#8e44ad]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <GithubIcon width="20px" height="20px" color="#fff" />
-            </a>
-          )}
-        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

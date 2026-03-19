@@ -1,20 +1,9 @@
 import { ImageTooltipProps } from "@/interface/image";
-import reactQuery from "@/assets/images/reactQuery.webp";
-import mui from "@/assets/images/mui.webp";
-import three from "@/assets/images/three.webp";
 import tailwindcss from "@/assets/images/tailwindcss.webp";
-import frmaerMotion from "@/assets/images/framerMotion.webp";
-import hugeicons from "@/assets/images/hugeicons.webp";
-import reduxToolkit from "@/assets/images/redux.webp";
-import formik from "@/assets/images/formik.webp";
-import yup from "@/assets/images/yup.webp";
-import vite from "@/assets/images/vite.webp";
-import i18n from "@/assets/images/i18n.webp";
-import vercel from "@/assets/images/vercel.webp";
-import astro from "@/assets/images/astro.webp";
+import typescript from "@/assets/images/typescript.webp";
+import nextImage from "@/assets/images/next.webp";
 import vue from "@/assets/images/vue.webp";
-import node from "@/assets/images/node.webp";
-import nest from "@/assets/images/nest.webp";
+import astro from "@/assets/images/astro.webp";
 import postgresql from "@/assets/images/postgresql.webp";
 import mysql from "@/assets/images/mysql.webp";
 import mongo from "@/assets/images/mongo.webp";
@@ -24,106 +13,59 @@ import docker from "@/assets/images/docker.webp";
 import firebase from "@/assets/images/firebase.webp";
 import postman from "@/assets/images/postman.webp";
 
-export const arrayImagesReactLibrary: ImageTooltipProps[] = [
-  {
-    title: "React Query",
-    image: reactQuery,
-  },
-  {
-    title: "Material UI",
-    image: mui,
-  },
-  {
-    title: "Redux Toolkit",
-    image: reduxToolkit,
-  },
+// We use full-color devicon links for the ones that were dark or missing
+const reactColor =
+  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg";
+const reactNativeColor =
+  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"; // React Native uses the same logo
+const phpColor =
+  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg";
+const laravelColor =
+  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg";
+const pythonColor =
+  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg";
+const djangoColor =
+  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"; // Django is traditionally green
+const nodeColor =
+  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg";
+const nestColor =
+  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg";
+const awsColor =
+  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg";
 
-  {
-    title: "TailwindCSS",
-    image: tailwindcss,
-  },
-  {
-    title: "Three.js",
-    image: three,
-  },
-  {
-    title: "Hugeicons",
-    image: hugeicons,
-  },
-  {
-    title: "Framer Motion",
-    image: frmaerMotion,
-  },
-
-  {
-    title: "Vercel",
-    image: vercel,
-  },
-  {
-    title: "Formik",
-    image: formik,
-  },
-  {
-    title: "Vite",
-    image: vite,
-  },
-  {
-    title: "Yup",
-    image: yup,
-  },
-  {
-    title: "i18n",
-    image: i18n,
-  },
+export const arrayFrontend: ImageTooltipProps[] = [
+  { title: "React", image: reactColor },
+  { title: "React Native", image: reactNativeColor },
+  { title: "VueJS", image: vue },
+  { title: "Next.js", image: nextImage },
+  { title: "TypeScript", image: typescript },
+  { title: "TailwindCSS", image: tailwindcss },
+  { title: "Astro", image: astro },
 ];
 
-export const arrayOtherTechnologies: ImageTooltipProps[] = [
-  {
-    title: "Astro",
-    image: astro,
-  },
-  {
-    title: "VueJS",
-    image: vue,
-  },
-  {
-    title: "NodeJS",
-    image: node,
-  },
-  {
-    title: "NestJS",
-    image: nest,
-  },
-  {
-    title: "PostgreSQL",
-    image: postgresql,
-  },
-  {
-    title: "MySQL",
-    image: mysql,
-  },
-  {
-    title: "MongoDB",
-    image: mongo,
-  },
-  {
-    title: "Git",
-    image: git,
-  },
-  {
-    title: "GitHub",
-    image: github,
-  },
-  {
-    title: "Docker",
-    image: docker,
-  },
-  {
-    title: "Firebase",
-    image: firebase,
-  },
-  {
-    title: "Postman",
-    image: postman,
-  },
+export const arrayBackend: ImageTooltipProps[] = [
+  { title: "PHP", image: phpColor },
+  { title: "Laravel", image: laravelColor },
+  { title: "Python", image: pythonColor },
+  { title: "Django", image: djangoColor },
+  { title: "NodeJS", image: nodeColor },
+  { title: "NestJS", image: nestColor },
 ];
+
+export const arrayInfra: ImageTooltipProps[] = [
+  { title: "AWS", image: awsColor },
+  { title: "Docker", image: docker },
+  { title: "MySQL", image: mysql },
+  { title: "PostgreSQL", image: postgresql },
+  { title: "MongoDB", image: mongo },
+  { title: "Firebase", image: firebase },
+  { title: "Git", image: git },
+  { title: "GitHub", image: github },
+  { title: "Postman", image: postman },
+];
+
+// Fallbacks for compatibility
+export const arrayImagesReactLibrary: ImageTooltipProps[] = [];
+export const arrayPHP: ImageTooltipProps[] = [];
+export const arrayPythonJS: ImageTooltipProps[] = [];
+export const arrayOtherTechnologies: ImageTooltipProps[] = [];

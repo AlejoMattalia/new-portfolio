@@ -1,0 +1,39 @@
+{
+  "navbar": {
+    "technologies": "TECNOLOGÍAS",
+    "experience": "EXPERIENCIA",
+    "projects": "PROYECTOS",
+    "contact": "CONTACTO"
+  },
+  "home": {
+    "title": {
+      "oneLetter": "D",
+      "twoLetter": "F",
+      "one": "ESARR",
+      "two": "OLLADOR",
+      "three": "RONTED"
+    },
+    "text": {
+      "first": {
+        "one": "Desarrollador Fro",
+        "two": "y responsivas. Tra",
+        "three": "en ofrecer una ex",
+        "four": "mantenerme actu",
+        "five": "posible para cada",
+        "six": "También tengo co",
+        "seven": "PostgreSQL, los c",
+        "eight": "Siempre estoy co"
+      },
+      "second": {
+        "one": "ntend con experiencia en la creación de interfaces web, intuitivas",
+        "two": "bajo principalmente con React, Next.js y Typescript, enfocándome",
+        "three": "periencia de usuario fluida y atractiva. Me gusta cuidar los detalles,",
+        "four": "alizado con nuevas tecnologías y siempre buscar la mejor solución",
+        "five": "proyecto.",
+        "six": "nocimientos en backend con Node.js, NestJS, MongoDB, MySQL y",
+        "seven": "uales utilizo como complemento cuando el proyecto lo requiere.",
+        "eight": "n ganas de seguir aprendiendo y creciendo en este camino."
+      }
+    }
+  }
+}

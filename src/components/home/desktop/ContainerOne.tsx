@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import PhotoProfile from "@/assets/images/photoProfile.webp";
 import Tilt from "react-parallax-tilt";
+import { useCustomTranslation } from "@/hooks/use-custom-translation";
 
 export const ContainerOne = () => {
+  const t = useCustomTranslation();
+
   return (
     <motion.div
       initial={{ x: -1000, opacity: 0 }}
@@ -33,18 +36,19 @@ export const ContainerOne = () => {
         <h1 className="text-white text-5xl font-bold">ALEJ</h1>
 
         <h2 className="text-white text-3xl font-bold mt-5">
-          <span className="text-primary">D</span>ESARR
+          <span className="text-primary">{t("home.title.oneLetter")}</span>
+          {t("home.title.one")}
         </h2>
 
         <p className="text-white mt-10 flex flex-col">
-          <span>Desarrollador Fro</span>
-          <span>y responsivas. Tra</span>
-          <span>en ofrecer una ex</span>
-          <span>mantenerme actu</span>
-          <span>posible para cada</span>
-          <span className="mt-4">También tengo co</span>
-          <span>PostgreSQL, los c</span>
-          <span>Siempre estoy co</span>
+          <span>{t("home.text.first.one")}</span>
+          <span>{t("home.text.first.two")}</span>
+          <span>{t("home.text.first.three")}</span>
+          <span>{t("home.text.first.four")}</span>
+          <span>{t("home.text.first.five")}</span>
+          <span className="mt-4">{t("home.text.first.six")}</span>
+          <span> {t("home.text.first.seven")}</span>
+          <span> {t("home.text.first.eight")}</span>
         </p>
       </div>
     </motion.div>
