@@ -78,7 +78,7 @@ export const Timeline = () => {
             </motion.div>
 
             {/* Timeline */}
-            <div className="relative w-full max-w-[800px] mx-auto">
+            <div className="relative w-full max-w-[800px] mx-auto mt-10">
                 {/* Vertical line */}
                 <motion.div
                     initial={{ scaleY: 0 }}
@@ -86,10 +86,10 @@ export const Timeline = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 1.2, ease: "easeInOut" }}
                     style={{ originY: 0 }}
-                    className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border to-transparent"
+                    className="absolute left-[23px] md:left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border to-transparent"
                 />
 
-                <div className="flex flex-col gap-16">
+                <div className="flex flex-col gap-12 md:gap-16">
                     {events.map((event, index) => {
                         const isLeft = index % 2 === 0;
 
@@ -100,41 +100,41 @@ export const Timeline = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true, margin: "-60px" }}
                                 transition={{ duration: 0.7, delay: 0.1 }}
-                                className={`relative flex items-center gap-6 ${isLeft ? "flex-row" : "flex-row-reverse"}`}
+                                className={`relative flex flex-col md:flex-row items-center md:gap-6 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"}`}
                             >
-                                {/* Card — half width */}
-                                <div className="w-[calc(50%-2rem)]">
+                                {/* Card — full width on mobile, half width on desktop */}
+                                <div className="w-full md:w-[calc(50%-2rem)] pl-16 md:pl-0">
                                     <motion.div
                                         whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                                        className={`group p-6 rounded-2xl bg-white/40 dark:bg-zinc-900/20 backdrop-blur-sm border border-border hover:border-foreground/20 shadow-sm hover:shadow-xl transition-all duration-500 ${isLeft ? "text-right" : "text-left"}`}
+                                        className={`group p-5 md:p-6 rounded-2xl bg-white/40 dark:bg-zinc-900/20 backdrop-blur-sm border border-border hover:border-foreground/20 shadow-sm hover:shadow-xl transition-all duration-500 ${isLeft ? "md:text-right" : "md:text-left"} text-left`}
                                     >
-                                        <span className="inline-block text-xs font-bold tracking-widest text-muted uppercase mb-2">
+                                        <span className="inline-block text-[10px] md:text-xs font-bold tracking-widest text-muted uppercase mb-2">
                                             {event.year}
                                         </span>
-                                        <h3 className="text-base font-bold text-foreground transition-colors leading-snug">
+                                        <h3 className="text-sm md:text-base font-bold text-foreground transition-colors leading-snug">
                                             {t(event.titleKey)}
                                         </h3>
-                                        <p className="text-muted text-sm mt-2 leading-relaxed transition-colors">
+                                        <p className="text-muted text-xs md:text-sm mt-2 leading-relaxed transition-colors">
                                             {t(event.descriptionKey)}
                                         </p>
                                     </motion.div>
                                 </div>
 
                                 {/* Center dot */}
-                                <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
+                                <div className="absolute left-[23px] md:left-1/2 -translate-x-1/2 flex items-center justify-center">
                                     <motion.div
                                         initial={{ scale: 0 }}
                                         whileInView={{ scale: 1 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.4, delay: 0.2, type: "spring", stiffness: 300 }}
-                                        className="w-12 h-12 rounded-full bg-background border-2 border-border flex items-center justify-center text-xl shadow-md z-10"
+                                        className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background border-2 border-border flex items-center justify-center text-lg md:text-xl shadow-md z-10"
                                     >
                                         {event.emoji}
                                     </motion.div>
                                 </div>
 
                                 {/* Empty spacer for the opposite side */}
-                                <div className="w-[calc(50%-2rem)]" />
+                                <div className="hidden md:block md:w-[calc(50%-2rem)]" />
                             </motion.div>
                         );
                     })}
