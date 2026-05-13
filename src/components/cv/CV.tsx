@@ -5,7 +5,7 @@ import { CustomButtom } from "../common/CustomButtom";
 import { timelineUnderDependencyData, timelineFreelanceData } from "@/api/api";
 import { arrayFrontend, arrayBackend, arrayInfra } from "@/utils/arrays";
 import { useNavigate } from "react-router-dom";
-import PhotoProfile from "@/assets/images/photoProfile.webp";
+import PhotoProfile from "@/assets/images/alejomattalia.jpeg";
 import { GmailIcon } from "@/assets/icons/GmailIcon";
 import { WhatsappIcon } from "@/assets/icons/WhatsappIcon";
 import { LinkedinIcon } from "@/assets/icons/LinkedinIcon";

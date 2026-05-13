@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import PhotoProfile from "@/assets/images/photoProfile.webp";
+import PhotoProfile from "@/assets/images/alejomattalia.jpeg";
 import Tilt from "react-parallax-tilt";
 import { useCustomTranslation } from "@/hooks/use-custom-translation";
 

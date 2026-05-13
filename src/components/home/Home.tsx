@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import { useCustomTranslation } from "@/hooks/use-custom-translation";
-import PhotoProfile from "@/assets/images/photoProfile.webp";
+import PhotoProfile from "@/assets/images/alejomattalia.jpeg";
 import { CustomButtom } from "../common/CustomButtom";
 import { Icon } from "../common/Icon";
 import { downloadCV, redirectWhatsapp } from "@/utils/utils";
