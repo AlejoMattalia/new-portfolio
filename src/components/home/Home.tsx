@@ -9,9 +9,11 @@ import { LinkedinIcon } from "@/assets/icons/LinkedinIcon";
 import { GithubIcon } from "@/assets/icons/GithubIcon";
 import { WhatsappIcon } from "@/assets/icons/WhatsappIcon";
 import { GmailIcon } from "@/assets/icons/GmailIcon";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
   const { t } = useCustomTranslation();
+  const navigate = useNavigate();
 
   return (
     <section className="relative z-10 w-full min-h-[85vh] flex flex-col-reverse lg:flex-row items-center justify-center gap-12 lg:gap-24 px-6 md:px-12 xl:px-32 mt-20 lg:mt-0 py-16 lg:py-40">
@@ -44,10 +46,15 @@ export const Home = () => {
           {t("home.subtitle3")}
         </p>
 
-        <div className="flex gap-4 mt-8">
+        <div className="flex flex-wrap gap-4 mt-8">
+          <CustomButtom
+            title={t("home.buttons.view_cv")}
+            variant="contained"
+            handleClick={() => navigate("/cv")}
+          />
           <CustomButtom
             title={t("home.buttons.download")}
-            variant="contained"
+            variant="outlined"
             handleClick={downloadCV}
           />
           <CustomButtom

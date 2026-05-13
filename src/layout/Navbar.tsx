@@ -5,13 +5,13 @@ import { CloseIcon } from "@/assets/icons/CloseIcon";
 import { MenuIcon } from "@/assets/icons/MenuIcon";
 import { useCustomTranslation } from "@/hooks/use-custom-translation";
 import { useTranslation } from "react-i18next";
-
-
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Navbar = () => {
   const { t } = useCustomTranslation();
   const { i18n } = useTranslation();
-
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
@@ -48,7 +48,10 @@ export const Navbar = () => {
           }`}
       >
         <div className="w-full max-w-[1200px] mx-auto px-12 flex items-center justify-between">
-          <div className="text-xl font-bold text-foreground tracking-tighter cursor-default transition-colors">
+          <div 
+            onClick={() => navigate("/")}
+            className="text-xl font-bold text-foreground tracking-tighter cursor-pointer transition-colors"
+          >
             AM<span className="text-muted">.</span>
           </div>
 
@@ -62,6 +65,13 @@ export const Navbar = () => {
               <RedirectText text={t("navbar.certifications")} redirect="certifications" />
               <RedirectText text={t("navbar.process")} redirect="process" />
               <RedirectText text={t("navbar.contact")} redirect="contact" />
+              <button
+                onClick={() => navigate("/cv")}
+                className={`font-semibold text-sm transition-all duration-300 relative group cursor-pointer ${location.pathname === "/cv" ? "text-foreground" : "text-muted hover:text-foreground"}`}
+              >
+                {t("navbar.cv")}
+                <span className={`absolute -bottom-1.5 left-0 w-full h-[1.5px] bg-foreground transform origin-left transition-transform duration-300 ease-out ${location.pathname === "/cv" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
+              </button>
             </nav>
 
             <div className="flex items-center gap-4">
@@ -85,7 +95,13 @@ export const Navbar = () => {
           }`}
       >
         <div className="flex items-center justify-between px-6 py-4">
-          <div className="text-xl font-bold text-foreground tracking-tighter relative z-50 cursor-default transition-colors">
+          <div 
+            onClick={() => {
+              navigate("/");
+              if (openMenu) handleOpenMenu();
+            }}
+            className="text-xl font-bold text-foreground tracking-tighter relative z-50 cursor-pointer transition-colors"
+          >
             AM<span className="text-muted">.</span>
           </div>
 
@@ -132,6 +148,17 @@ export const Navbar = () => {
                 <RedirectText text={t("navbar.certifications")} redirect="certifications" setOpenMenu={setOpenMenu} />
                 <RedirectText text={t("navbar.process")} redirect="process" setOpenMenu={setOpenMenu} />
                 <RedirectText text={t("navbar.contact")} redirect="contact" setOpenMenu={setOpenMenu} />
+                <button
+                  onClick={() => {
+                    navigate("/cv");
+                    setOpenMenu(false);
+                    document.body.style.overflow = "auto";
+                  }}
+                  className={`font-semibold text-left text-sm transition-all duration-300 relative group cursor-pointer ${location.pathname === "/cv" ? "text-foreground" : "text-muted hover:text-foreground"}`}
+                >
+                  {t("navbar.cv")}
+                  <span className={`absolute -bottom-1 left-0 w-12 h-[1.5px] bg-foreground transform origin-left transition-transform duration-300 ease-out ${location.pathname === "/cv" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
+                </button>
               </nav>
             </motion.div>
           )}

@@ -17,6 +17,7 @@ import { Layout } from "./layout/Layout";
 import { NotFound } from "./components/common/NotFound";
 import { ThemeContextProvider, useThemeContext } from "./context/ThemeContext";
 import { useMemo } from "react";
+import { CV } from "./components/cv/CV";
 
 const AppContent = () => {
   const { mode } = useThemeContext();
@@ -47,6 +48,17 @@ const AppContent = () => {
                 <WorkProcess />
                 <Contact />
               </section>
+              <ButtonScrollTop />
+            </div>
+          }
+        />
+        <Route
+          path="/cv"
+          element={
+            <div className="relative w-full min-h-screen overflow-hidden pb-30 bg-background transition-colors duration-300">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(0,0,0,0))] pointer-events-none" />
+              <Layout />
+              <CV />
               <ButtonScrollTop />
             </div>
           }

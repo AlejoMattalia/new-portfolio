@@ -24,7 +24,8 @@
     "process": "PROCESO",
     "certifications": "CERTS",
     "timeline": "HISTORIA",
-    "contact": "CONT"
+    "contact": "CONT",
+    "cv": "CV"
   },
   "home": {
     "title": {
@@ -39,7 +40,8 @@
     "subtitle3": "Me apasiona resolver problemas complejos y construir soluciones que tengan un impacto real. Mi enfoque combina la excelencia técnica con una comunicación clara, asegurando que cada proyecto no solo sea funcional, sino también escalable y fácil de mantener.",
     "buttons": {
       "download": "Descargar CV",
-      "contact": "Contáctame"
+      "contact": "Contáctame",
+      "view_cv": "Ver CV Online"
     },
     "stats": {
       "experience": {
@@ -270,5 +272,33 @@
       "title": "Bootcamp Desarrollo Backend",
       "description": "Bootcamp de 200 horas en Webexperto enfocado en desarrollo backend, APIs, bases de datos y despliegue."
     }
+  },
+  "cv_page": {
+    "title": "Currículum Vitae",
+    "subtitle": "Historial profesional, habilidades técnicas y formación académica.",
+    "download_pdf": "Descargar PDF",
+    "back_portfolio": "Volver al Portfolio",
+    "profile": "Perfil Profesional",
+    "experience": "Experiencia Laboral",
+    "corporate": "Relación de Dependencia",
+    "freelance": "Proyectos Independientes / Freelance",
+    "skills": "Habilidades Técnicas",
+    "education": "Educación y Certificaciones",
+    "languages": "Idiomas",
+    "languages_list": {
+      "spanish": "Español (Nativo)",
+      "english": "Inglés (Técnico / B2)"
+    },
+    "location": "Córdoba, Argentina (Remoto)",
+    "contact_title": "Contacto",
+    "label_email": "Correo electrónico",
+    "label_phone": "Teléfono / WhatsApp",
+    "label_website": "Sitio Web",
+    "email": "alejoomattalia@gmail.com",
+    "phone": "+54 9 3468530707",
+    "location_full": "Corral de Bustos, Córdoba, Argentina",
+    "website": "alejomattalia.com",
+    "github": "AlejoMattalia",
+    "linkedin": "alejo-mattalia"
   }
 }

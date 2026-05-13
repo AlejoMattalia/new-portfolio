@@ -24,7 +24,8 @@
     "process": "PROCESS",
     "certifications": "CERTS",
     "timeline": "JOURNEY",
-    "contact": "CONTACT"
+    "contact": "CONTACT",
+    "cv": "CV"
   },
   "home": {
     "title": {
@@ -39,7 +40,8 @@
     "subtitle3": "I am passionate about solving complex problems and building solutions that have a real impact. My approach combines technical excellence with clear communication, ensuring that every project is not only functional but also scalable and easy to maintain.",
     "buttons": {
       "download": "Download CV",
-      "contact": "Contact Me"
+      "contact": "Contact Me",
+      "view_cv": "View Online CV"
     },
     "stats": {
       "experience": {
@@ -270,5 +272,33 @@
       "title": "Backend Development Bootcamp",
       "description": "200-hour bootcamp at Webexperto focused on server-side development, APIs, databases and deployment."
     }
+  },
+  "cv_page": {
+    "title": "Curriculum Vitae",
+    "subtitle": "Professional track record, technical skills, and academic background.",
+    "download_pdf": "Download PDF",
+    "back_portfolio": "Back to Portfolio",
+    "profile": "Professional Profile",
+    "experience": "Work Experience",
+    "corporate": "Corporate Experience",
+    "freelance": "Independent / Freelance Projects",
+    "skills": "Technical Skills",
+    "education": "Education & Certifications",
+    "languages": "Languages",
+    "languages_list": {
+      "spanish": "Spanish (Native)",
+      "english": "English (Technical / B2)"
+    },
+    "location": "Córdoba, Argentina (Remote)",
+    "contact_title": "Contact",
+    "label_email": "Email",
+    "label_phone": "Phone / WhatsApp",
+    "label_website": "Website",
+    "email": "alejoomattalia@gmail.com",
+    "phone": "+54 9 3468530707",
+    "location_full": "Corral de Bustos, Córdoba, Argentina",
+    "website": "alejomattalia.com",
+    "github": "AlejoMattalia",
+    "linkedin": "alejo-mattalia"
   }
 }
