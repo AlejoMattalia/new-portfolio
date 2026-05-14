@@ -138,7 +138,7 @@ export const Navbar = () => {
               transition={{ duration: 0.3 }}
               className="fixed inset-0 min-h-screen bg-background/95 z-40 flex flex-col pt-24 px-6"
             >
-              <nav className="flex flex-col gap-6 mt-8">
+              <nav className="flex flex-col items-center gap-6 mt-8">
                 <RedirectText text={t("navbar.timeline")} redirect="timeline" setOpenMenu={setOpenMenu} />
                 <RedirectText text={t("navbar.services")} redirect="services" setOpenMenu={setOpenMenu} />
 
@@ -154,10 +154,10 @@ export const Navbar = () => {
                     setOpenMenu(false);
                     document.body.style.overflow = "auto";
                   }}
-                  className={`font-semibold text-left text-sm transition-all duration-300 relative group cursor-pointer ${location.pathname === "/cv" ? "text-foreground" : "text-muted hover:text-foreground"}`}
+                  className={`font-semibold text-sm transition-all duration-300 relative group cursor-pointer ${location.pathname === "/cv" ? "text-foreground" : "text-muted hover:text-foreground"}`}
                 >
                   {t("navbar.cv")}
-                  <span className={`absolute -bottom-1 left-0 w-12 h-[1.5px] bg-foreground transform origin-left transition-transform duration-300 ease-out ${location.pathname === "/cv" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
+                  <span className={`absolute -bottom-1 left-0 w-full h-[1.5px] bg-foreground transform origin-left transition-transform duration-300 ease-out ${location.pathname === "/cv" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
                 </button>
               </nav>
             </motion.div>
