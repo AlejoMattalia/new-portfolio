@@ -34,9 +34,9 @@ const services: Service[] = [
         descriptionKey: "services_section.cloud.description",
     },
     {
-        icon: "🎨",
-        titleKey: "services_section.ui.title",
-        descriptionKey: "services_section.ui.description",
+        icon: "🤖",
+        titleKey: "services_section.automation.title",
+        descriptionKey: "services_section.automation.description",
     },
 ];
 

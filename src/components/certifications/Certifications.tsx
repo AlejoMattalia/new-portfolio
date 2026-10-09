@@ -8,6 +8,7 @@ interface Cert {
     titleKey: string;
     descriptionKey: string;
     date: string;
+    year: string;
     hours?: string;
 }
 
@@ -18,7 +19,7 @@ const certs: Cert[] = [
         color: "from-blue-500/10 to-cyan-500/10 border-blue-500/20 hover:border-blue-500/40",
         titleKey: "certifications.teclab.title",
         descriptionKey: "certifications.teclab.description",
-        date: "Feb 2024",
+        date: "months.feb", year: "2024",
     },
     {
         emoji: "⚛️",
@@ -26,8 +27,8 @@ const certs: Cert[] = [
         color: "from-yellow-400/10 to-orange-400/10 border-yellow-400/20 hover:border-yellow-400/40",
         titleKey: "certifications.coderhouse.title",
         descriptionKey: "certifications.coderhouse.description",
-        date: "Jul 2023",
-        hours: "27 semanas",
+        date: "months.jul", year: "2023",
+        hours: "certifications_section.weeks",
     },
     {
         emoji: "🖥️",
@@ -35,8 +36,8 @@ const certs: Cert[] = [
         color: "from-purple-500/10 to-pink-500/10 border-purple-500/20 hover:border-purple-500/40",
         titleKey: "certifications.webexperto.title",
         descriptionKey: "certifications.webexperto.description",
-        date: "Dic 2023",
-        hours: "200hs",
+        date: "months.dec", year: "2023",
+        hours: "certifications_section.hours",
     },
 ];
 
@@ -80,7 +81,7 @@ export const Certifications = () => {
                         <div className="flex items-start justify-between">
                             <span className="text-4xl">{cert.emoji}</span>
                             <span className="text-xs font-bold text-muted tracking-widest uppercase bg-background/60 border border-border rounded-lg px-3 py-1">
-                                {cert.date}
+                                {t(cert.date)} {cert.year}
                             </span>
                         </div>
 
@@ -103,7 +104,7 @@ export const Certifications = () => {
                         {cert.hours && (
                             <div className="mt-auto pt-2 border-t border-border/50">
                                 <span className="text-xs text-muted font-medium">
-                                    ⏱ {cert.hours}
+                                    ⏱ {t(cert.hours)}
                                 </span>
                             </div>
                         )}

@@ -6,7 +6,7 @@ import { useCustomTranslation } from "@/hooks/use-custom-translation";
 export const Timeline = ({ array }: { array: TimeLine[] }) => {
   const { t } = useCustomTranslation();
 
-  const translateDate = (dateStr: string) => {
+  const translateDate = (dateStr?: string) => {
     if (!dateStr) return "";
     const parts = dateStr.split(" ");
     if (parts[0].startsWith("months.") || parts[0].startsWith("common.")) {
@@ -38,9 +38,11 @@ export const Timeline = ({ array }: { array: TimeLine[] }) => {
                 {item.company}
               </h4>
               <p className="text-muted text-sm md:text-base font-medium transition-colors">{t(item.role)}</p>
-              <div className="text-xs font-semibold text-muted mt-1 uppercase tracking-widest transition-colors">
-                {translateDate(item.start)} - {translateDate(item.end)}
-              </div>
+              {(item.start || item.end) && (
+                <div className="text-xs font-semibold text-muted mt-1 uppercase tracking-widest transition-colors">
+                  {[item.start, item.end].filter(Boolean).map(translateDate).join(" - ")}
+                </div>
+              )}
             </div>
 
             <div className="mt-4 inline-block">

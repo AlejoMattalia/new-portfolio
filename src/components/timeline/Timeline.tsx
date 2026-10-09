@@ -28,7 +28,7 @@ const events: TimelineEvent[] = [
         descriptionKey: "timeline.started_studying.description",
     },
     {
-        year: "2023",
+        year: "2024",
         emoji: "💼",
         titleKey: "timeline.first_job.title",
         descriptionKey: "timeline.first_job.description",
@@ -40,13 +40,13 @@ const events: TimelineEvent[] = [
         descriptionKey: "timeline.freelance.description",
     },
     {
-        year: "2024",
+        year: "2025",
         emoji: "🌍",
         titleKey: "timeline.international.title",
         descriptionKey: "timeline.international.description",
     },
     {
-        year: "2025",
+        year: "common.present",
         emoji: "⚡",
         titleKey: "timeline.now.title",
         descriptionKey: "timeline.now.description",
@@ -109,7 +109,7 @@ export const Timeline = () => {
                                         className={`group p-5 md:p-6 rounded-2xl bg-white/40 dark:bg-zinc-900/20 backdrop-blur-sm border border-border hover:border-foreground/20 shadow-sm hover:shadow-xl transition-all duration-500 ${isLeft ? "md:text-right" : "md:text-left"} text-left`}
                                     >
                                         <span className="inline-block text-[10px] md:text-xs font-bold tracking-widest text-muted uppercase mb-2">
-                                            {event.year}
+                                            {t(event.year)}
                                         </span>
                                         <h3 className="text-sm md:text-base font-bold text-foreground transition-colors leading-snug">
                                             {t(event.titleKey)}

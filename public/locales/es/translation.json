@@ -35,9 +35,9 @@
       "two": "TACK",
       "three": "DEVELOPER"
     },
-    "subtitle1": "Desarrollador con experiencia en el ecosistema PHP (Laravel), JavaScript (React, Vue, Node.js) y Python (Django). Especializado en la arquitectura de sistemas transaccionales, integración de múltiples pasarelas de pago globales y despliegue en infraestructura AWS con Docker.",
-    "subtitle2": "He liderado proyectos que van desde plataformas de gestión operativa y sistemas contables hasta soluciones de hardware asistivo y automatización con IA.",
-    "subtitle3": "Me apasiona resolver problemas complejos y construir soluciones que tengan un impacto real. Mi enfoque combina la excelencia técnica con una comunicación clara, asegurando que cada proyecto no solo sea funcional, sino también escalable y fácil de mantener.",
+    "subtitle1": "Desarrollador fullstack: construyo aplicaciones web y móviles, sistemas de gestión y automatizaciones con IA. Trabajo con React, Next.js, React Native, Node.js, Laravel y Python, desde la interfaz hasta las integraciones y el despliegue.",
+    "subtitle2": "Mis proyectos abarcan comercio electrónico, sistemas de gestión y automatizaciones para negocios locales. Entre ellos: Marani Automotores, Corral Plagas, Gildo Regionales y los sistemas Vannay y Sporting.",
+    "subtitle3": "Me interesa conectar el software con necesidades concretas: simplificar una operación, acercar un servicio o hacer una herramienta más accesible. Combino desarrollo de producto, integración de APIs y una comunicación directa durante todo el proceso.",
     "buttons": {
       "download": "Descargar CV",
       "contact": "Contáctame",
@@ -45,16 +45,14 @@
     },
     "stats": {
       "experience": {
-        "value": "+2",
-        "label": "años de experiencia"
+        "value": "2023",
+        "label": "desarrollo freelance desde"
       },
       "projects": {
-        "value": "+7",
-        "label": "proyectos finalizados"
+        "label": "proyectos en el portfolio"
       },
-      "commits": {
-        "value": "+300",
-        "label": "commits este año"
+      "platforms": {
+        "label": "desarrollo de productos"
       }
     }
   },
@@ -70,7 +68,7 @@
     "subtitle": "Mi trayectoria profesional y proyectos freelance.",
     "corporate": "Corporativa",
     "freelance": "Freelance",
-    "duration_suffix": "de duración total",
+    "duration_suffix": "desde el inicio de mi actividad",
     "button": "Ponerse en contacto",
     "view_details": "Ver detalles",
     "to_be_continued": "Continuará...",
@@ -78,47 +76,59 @@
   },
   "projects_section": {
     "title": "Proyectos",
-    "subtitle": "Trabajos seleccionados que muestran mis habilidades y pasión.",
+    "subtitle": "Sitios web, sistemas de gestión y automatizaciones para negocios reales.",
     "filter_all": "Todos",
-    "filter_by": "Filtrar por"
+    "filter_by": "Filtrar por",
+    "categories": {
+      "automation": "Catálogo · Automatización con IA"
+    },
+    "case_study": "Proyecto",
+    "ai": "IA",
+    "repository": "Repositorio de {{title}}",
+    "website": "Visitar {{title}}"
   },
   "services_section": {
     "title": "Servicios",
     "subtitle": "Lo que puedo construir para vos — desde la idea hasta producción.",
     "web_dev": {
-      "title": "Desarrollo Web",
-      "description": "Aplicaciones web a medida con frameworks modernos como React, Vue y Laravel. Desde landing pages simples hasta plataformas complejas."
+      "title": "Sitios y aplicaciones web",
+      "description": "Sitios corporativos, catálogos y aplicaciones a medida con React, Next.js, Astro, Vue y Laravel. Interfaces adaptadas a móviles y conectadas con las herramientas de cada negocio."
     },
     "ecommerce": {
-      "title": "E-Commerce",
-      "description": "Tiendas online completas con integración de pasarelas de pago, gestión de inventario y experiencias de usuario fluidas."
+      "title": "E-commerce y pagos",
+      "description": "Tiendas online, catálogos de productos y flujos de compra. Integración de Mercado Pago, Stripe, PayPal y otras pasarelas según las necesidades del proyecto."
     },
     "mobile": {
-      "title": "Apps Móviles",
-      "description": "Aplicaciones móviles multiplataforma con React Native. Rendimiento nativo con una base de código compartida para iOS y Android."
+      "title": "Aplicaciones móviles",
+      "description": "Aplicaciones con React Native e integración con APIs y dispositivos. Experiencia en conectividad, procesamiento de imágenes y asistencia por voz."
     },
     "api": {
-      "title": "API & Backend",
-      "description": "APIs RESTful robustas y sistemas backend con Node.js, Laravel o Django. Seguras, escalables y bien documentadas."
+      "title": "APIs y sistemas de gestión",
+      "description": "Sistemas para administrar clientes, operaciones y datos. Desarrollo de APIs con Node.js, Laravel o Django y persistencia en bases de datos SQL y NoSQL."
     },
     "cloud": {
-      "title": "Cloud & DevOps",
-      "description": "Despliegue y gestión de infraestructura en AWS con Docker y pipelines de CI/CD. Garantizando fiabilidad y escalabilidad."
+      "title": "Infraestructura y despliegue",
+      "description": "Configuración y despliegue de aplicaciones con Docker y AWS. Integración de servicios, gestión de entornos y mantenimiento de las soluciones."
     },
-    "ui": {
-      "title": "Diseño UI/UX",
-      "description": "Interfaces limpias y modernas diseñadas con la experiencia del usuario en mente. Prototipos, sistemas de diseño e implementaciones pixel-perfect."
+    "automation": {
+      "title": "Automatización con IA",
+      "description": "Asistentes para WhatsApp y Messenger conectados con catálogos y datos del negocio. Flujos para interpretar consultas, transcribir audios y analizar imágenes."
     }
   },
   "contact_section": {
     "title": "Ponte en Contacto",
-    "subtitle": "¿Tienes un proyecto en mente? Trabajemos juntos para crear algo hermoso.",
+    "subtitle": "Contame qué necesitás resolver: un sitio web, una aplicación, un sistema de gestión o una automatización. Podemos conversar sobre el alcance y los próximos pasos.",
     "name": "Nombre",
     "email": "Correo electrónico",
     "phone": "Teléfono",
     "message": "Mensaje",
     "button_send": "Enviar Mensaje",
-    "button_sending": "Enviando..."
+    "button_sending": "Enviando...",
+    "success": "Mensaje enviado. Gracias por contactarme.",
+    "error": "No se pudo enviar el mensaje. Intentá nuevamente o escribime por WhatsApp.",
+    "required": "Este campo es obligatorio.",
+    "invalid_email": "Ingresá un correo válido.",
+    "invalid_phone": "Ingresá entre 6 y 15 dígitos, sin espacios ni símbolos."
   },
   "notFound": {
     "title": "404",
@@ -141,7 +151,7 @@
     },
     "started_studying": {
       "title": "Inicio de la Tecnicatura",
-      "description": "Me inscribí en una Tecnicatura en Informática, construyendo una base sólida en programación, bases de datos y desarrollo de software."
+      "description": "Comencé la Tecnicatura Superior en Programación en Teclab, con formación en programación, bases de datos y desarrollo de software."
     },
     "first_job": {
       "title": "Primer Trabajo Profesional",
@@ -156,26 +166,26 @@
       "description": "Trabajé con MDAbroad construyendo plataformas transaccionales utilizadas en múltiples países con integraciones complejas de pasarelas de pago."
     },
     "now": {
-      "title": "Construyendo el Futuro",
-      "description": "Enfocado en soluciones fullstack escalables, abierto a proyectos y colaboraciones emocionantes en todo el mundo."
+      "title": "Web, móvil y automatización",
+      "description": "Desarrollo de aplicaciones web y móviles, sistemas de gestión y automatizaciones con IA. Mi trabajo más reciente en el portfolio incluye el catálogo y el asistente de Marani Automotores."
     }
   },
   "experience": {
     "becode": {
       "role": "Desarrollador Fullstack",
-      "description": "En BeCode me desempeñé como desarrollador full stack, participando en el desarrollo de una app web de e-commerce y una app móvil tipo Instagram, utilizando React.js, Node.js y MySQL."
+      "description": "Desarrollo fullstack de soluciones de e-commerce y una aplicación móvil de tipo social. Trabajo con React, Node.js y MySQL, coordinación técnica y presentación de avances al equipo y a clientes."
     },
     "byron": {
       "role": "Desarrollador Frontend",
-      "description": "Desarrollé la landing page y la aplicación de OrdenApp, una plataforma integral para restaurantes que abarca tanto el Backoffice como el Menú digital."
+      "description": "Desarrollo de la landing page y la aplicación de OrdenApp con React, TypeScript y MUI. Trabajo en backoffice, menú digital con códigos QR, integración de Mercado Pago y tableros de ventas."
     },
     "mdabroad": {
       "role": "Desarrollador Fullstack",
-      "description": "Desarrollé y optimicé una plataforma transaccional utilizando PHP y Laravel, gestionando la persistencia de datos con MySQL."
+      "description": "Desarrollo y optimización de plataformas transaccionales con PHP, Laravel, Vue.js y MySQL. Integración de pasarelas como Mercado Pago, dLocal Go, PayPal, Stripe y Flywire, y despliegue con Docker en AWS."
     },
     "ceacus": {
       "role": "Desarrollador Fullstack",
-      "description": "Desarrollé la aplicación móvil complementaria para un dispositivo wearable (lentes) enfocado en la asistencia a personas con discapacidad."
+      "description": "Desarrollo de una aplicación móvil con React Native para lentes de asistencia visual. Integración con el dispositivo, conectividad y sincronización de datos, junto con un backend en Python y Django sobre AWS."
     },
     "salvatore": {
       "role": "Peluquería Salvatore",
@@ -193,10 +203,6 @@
       "role": "Gildo Regionales",
       "description": "E-commerce especializado en la venta de vinos boutique seleccionados por calidad y tradición."
     },
-    "la_feria": {
-      "role": "La Feria Multieventos",
-      "description": "Plataforma promocional y sistema de venta de accesos para eventos exclusivos +25."
-    },
     "juan_carlos": {
       "role": "Juan Carlos Mattalia",
       "description": "Portfolio personal y galería virtual interactiva para el artista plástico Juan Carlos Mattalia."
@@ -204,65 +210,71 @@
     "sporting": {
       "role": "Sistema Sporting V2",
       "description": "Sistema interno avanzado de gestión integral para el Sporting Club."
+    },
+    "marani": {
+      "role": "Marani Automotores",
+      "description": "Desarrollo del sitio web y catálogo de vehículos con panel de administración. Integración de un asistente con IA para WhatsApp y Messenger, conectado al inventario, con transcripción de audios y análisis de imágenes. Stack: Astro, TypeScript, Node.js y MongoDB."
     }
   },
   "projects_list": {
     "salvatore": {
-      "description": "Sitio minimalista y experiencia digital para el Salón Salvatore."
+      "description": "Sitio web para Salvatore Men’s Club, con presentación de servicios y acceso a los canales de contacto. Desarrollado con Astro y Tailwind CSS."
     },
     "vannay": {
-      "description": "Sistema avanzado de gestión de clientes y contabilidad financiera."
+      "description": "Sistema de gestión de clientes y contabilidad, con una interfaz en React y un backend en Node.js conectado a PostgreSQL."
     },
     "corral": {
-      "description": "Inscripciones, tickets y cobros para capacitación internacional."
+      "description": "Sitio de la Jornada Internacional de Capacitación para empresas de Control de Plagas, con inscripciones, tickets e integración de cobros."
     },
     "gildo": {
-      "description": "E-commerce de vinos de calidad y armado de cajas personalizadas."
-    },
-    "la_feria": {
-      "description": "Plataforma web de difusión y acceso a eventos exclusivos."
+      "description": "Tienda online de vinos boutique, con catálogo de productos y armado de cajas personalizadas."
     },
     "juan_carlos": {
-      "description": "Galería de arte virtual y portfolio interactivo hiper-minimalista."
+      "description": "Portfolio y galería virtual del artista plástico Juan Carlos Mattalia, con presentación de obras y canales de contacto."
     },
     "sporting": {
-      "description": "Moderno sistema integral de administración para el Sporting Club."
+      "description": "Sistema interno de administración para Sporting Club, orientado a centralizar la gestión y las operaciones del club."
+    },
+    "maran": {
+      "description": "Catálogo de vehículos con panel de administración y un asistente para WhatsApp y Messenger. Integra consultas sobre el inventario, transcripción de audios y análisis de imágenes con IA."
     }
   },
   "process_section": {
     "title": "Proceso de Trabajo",
-    "subtitle": "Cómo convierto ideas en productos listos para producción, paso a paso.",
+    "subtitle": "Del problema inicial a la entrega, con avances que podés revisar.",
     "steps": {
       "discovery": {
         "title": "Descubrimiento",
-        "description": "Entender tus objetivos, audiencia y requisitos mediante conversaciones claras."
+        "description": "Conversamos sobre el problema, los usuarios y las herramientas actuales. Definimos el alcance y las prioridades del proyecto."
       },
       "design": {
         "title": "Diseño",
-        "description": "Wireframes, prototipos y sistemas de diseño pensados para la claridad y la estética."
+        "description": "Organizamos los contenidos y los flujos principales. Preparamos una propuesta de interfaz para revisar antes de implementar."
       },
       "development": {
         "title": "Desarrollo",
-        "description": "Código limpio y escalable construido con el stack adecuado para tu proyecto."
+        "description": "Construimos la solución por etapas e integramos las APIs, bases de datos y servicios necesarios. Compartimos avances para ajustar a tiempo."
       },
       "testing": {
         "title": "Testing",
-        "description": "QA exhaustivo en dispositivos y navegadores antes de salir a producción."
+        "description": "Revisamos los flujos principales, la adaptación a distintos tamaños de pantalla y las integraciones antes de publicar."
       },
       "launch": {
         "title": "Lanzamiento",
-        "description": "Despliegue fluido, monitoreo y soporte continuo tras el lanzamiento."
+        "description": "Preparamos el despliegue y la entrega. Coordinamos la documentación, el mantenimiento y los próximos pasos según el alcance acordado."
       }
     }
   },
   "certifications_section": {
     "title": "Certificaciones",
-    "subtitle": "Credenciales académicas que respaldan mis habilidades técnicas."
+    "subtitle": "Credenciales académicas que respaldan mis habilidades técnicas.",
+    "weeks": "27 semanas",
+    "hours": "200 horas"
   },
   "certifications": {
     "teclab": {
       "title": "Tecnicatura Superior en Programación",
-      "description": "Finalizé la Tecnicatura Superior en Programación en Teclab — Instituto Técnico Superior, obteniendo el título de Técnico Superior en Programación."
+      "description": "Finalicé la Tecnicatura Superior en Programación en Teclab — Instituto Técnico Superior, obteniendo el título de Técnico Superior en Programación."
     },
     "coderhouse": {
       "title": "Carrera de Desarrollo Frontend React",
@@ -287,7 +299,7 @@
     "languages": "Idiomas",
     "languages_list": {
       "spanish": "Español (Nativo)",
-      "english": "Inglés (Técnico / B2)"
+      "english": "Inglés (Intermedio)"
     },
     "location": "Córdoba, Argentina (Remoto)",
     "contact_title": "Contacto",
@@ -299,6 +311,7 @@
     "location_full": "Corral de Bustos, Córdoba, Argentina",
     "website": "alejomattalia.com",
     "github": "AlejoMattalia",
-    "linkedin": "alejo-mattalia"
+    "linkedin": "alejo-mattalia",
+    "projects": "Proyectos seleccionados"
   }
 }

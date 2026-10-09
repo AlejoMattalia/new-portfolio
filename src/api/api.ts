@@ -1,9 +1,10 @@
 import { TimeLine } from "@/interface/experiencie";
+import { CardProps } from "@/interface/project";
 import salvatoreImg from "@/assets/images/projects/salvatore.png";
 import vannayImg from "@/assets/images/projects/vannay.png";
 import corralplagasImg from "@/assets/images/projects/corralplagas.png";
 import gildoImg from "@/assets/images/projects/gildoregionales.png";
-import laferiaImg from "@/assets/images/projects/laferiamultieventos.png";
+import maraniImg from "@/assets/images/projects/marani.png";
 import juancarlosImg from "@/assets/images/projects/juancarlosmattalia.png";
 import sportingImg from "@/assets/images/projects/sportingv2.png";
 export const timelineUnderDependencyData: TimeLine[] = [
@@ -53,6 +54,12 @@ export const timelineUnderDependencyData: TimeLine[] = [
 export const timelineFreelanceData: TimeLine[] = [
   {
     company: "Freelance",
+    role: "experience.marani.role",
+    description: "experience.marani.description",
+    technologies: ["Astro", "TypeScript", "Node.js", "MongoDB", "OpenAI API"],
+  },
+  {
+    company: "Freelance",
     role: "experience.salvatore.role",
     start: "months.jan 2024",
     end: "months.feb 2024",
@@ -85,14 +92,6 @@ export const timelineFreelanceData: TimeLine[] = [
   },
   {
     company: "Freelance",
-    role: "experience.la_feria.role",
-    start: "months.nov 2024",
-    end: "months.dec 2024",
-    description: "experience.la_feria.description",
-    technologies: ["Next.js", "TailwindCSS", "Node.js"],
-  },
-  {
-    company: "Freelance",
     role: "experience.juan_carlos.role",
     start: "months.dec 2024",
     end: "months.jan 2025",
@@ -109,7 +108,15 @@ export const timelineFreelanceData: TimeLine[] = [
   },
 ];
 
-export const projects = [
+export const projects: CardProps[] = [
+  {
+    title: "Marani Automotores",
+    img: maraniImg,
+    linkWeb: "https://maraniautomotores.com/",
+    category: "projects_section.categories.automation",
+    technologies: ["Astro", "Node.js", "MongoDB", "IA"],
+    description: "projects_list.maran.description",
+  },
   {
     title: "Peluquería Salvatore",
     img: salvatoreImg,
@@ -137,13 +144,6 @@ export const projects = [
     technologies: ["React js", "Firebase"],
     description: "projects_list.gildo.description",
     linkWeb: "https://www.gildoregionales.com/",
-  },
-  {
-    title: "La Feria Multieventos",
-    img: laferiaImg,
-    technologies: ["Next js", "TailwindCSS"],
-    description: "projects_list.la_feria.description",
-    linkWeb: "https://www.laferiamultieventos.com/",
   },
   {
     title: "Juan Carlos Mattalia",

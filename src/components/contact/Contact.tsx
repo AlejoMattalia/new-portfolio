@@ -25,16 +25,16 @@ export const Contact = () => {
       message: "",
     },
     validationSchema: Yup.object({
-      name: Yup.string().required(t("contact_section.name") + " is required"),
+      name: Yup.string().required(t("contact_section.required")),
       email: Yup.string()
-        .email("Invalid email")
-        .required(t("contact_section.email") + " is required"),
+        .email(t("contact_section.invalid_email"))
+        .required(t("contact_section.required")),
       phone: Yup.string()
-        .matches(/^[0-9]+$/, "Phone must contain only numbers")
-        .min(6, "Phone too short")
-        .max(15, "Phone too long")
-        .required(t("contact_section.phone") + " is required"),
-      message: Yup.string().required(t("contact_section.message") + " is required"),
+        .matches(/^[0-9]+$/, t("contact_section.invalid_phone"))
+        .min(6, t("contact_section.invalid_phone"))
+        .max(15, t("contact_section.invalid_phone"))
+        .required(t("contact_section.required")),
+      message: Yup.string().required(t("contact_section.required")),
     }),
     onSubmit: async (values) => {
       try {
@@ -45,11 +45,11 @@ export const Contact = () => {
           import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         );
 
-        toast.success("Message sent successfully");
+        toast.success(t("contact_section.success"));
         resetForm();
       } catch (error) {
         console.log(error);
-        toast.error("Error sending message");
+        toast.error(t("contact_section.error"));
       }
     },
   });

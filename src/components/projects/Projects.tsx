@@ -4,27 +4,23 @@ import { CardProject } from "./CardProject";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCustomTranslation } from "@/hooks/use-custom-translation";
 
+const normalizeTech = (tech: string) => {
+  const name = tech.toLowerCase();
+  if (name.includes("react native")) return "React Native";
+  if (name.includes("react")) return "React";
+  if (name.includes("next")) return "Next.js";
+  if (name.includes("node")) return "Node.js";
+  if (name.includes("tailwind")) return "Tailwind CSS";
+  return tech;
+};
+
 export const Projects = () => {
   const { t } = useCustomTranslation();
   const [selectedTech, setSelectedTech] = useState<string>("All");
 
-  // Normalize tech names for consistent filtering
-  const normalizeTech = (tech: string) => {
-    const t = tech.toLowerCase();
-    if (t.includes("react")) return "React";
-    if (t.includes("next")) return "Next.js";
-    if (t.includes("node")) return "Node.js";
-    if (t.includes("tailwind")) return "Tailwind";
-    if (t.includes("astro")) return "Astro";
-    if (t.includes("firebase")) return "Firebase";
-    if (t.includes("mongo")) return "MongoDB";
-    if (t.includes("postgre")) return "PostgreSQL";
-    return tech;
-  };
-
   const categories = useMemo(() => {
     const techs = projects.flatMap(p => p.technologies.map(normalizeTech));
-    return ["All", ...Array.from(new Set(techs))].sort();
+    return ["All", ...Array.from(new Set(techs)).sort()];
   }, []);
 
   const filteredProjects = useMemo(() => {
@@ -59,12 +55,13 @@ export const Projects = () => {
           <button
             key={tech}
             onClick={() => setSelectedTech(tech)}
+            aria-pressed={selectedTech === tech}
             className={`cursor-pointer px-5 py-2 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 ${selectedTech === tech
               ? "bg-foreground text-background shadow-lg dark:shadow-[0_0_20px_rgba(255,255,255,0.1)] scale-105"
               : "bg-white dark:bg-zinc-900 border border-border text-muted hover:border-zinc-400 dark:hover:border-zinc-600 hover:text-foreground shadow-sm"
               }`}
           >
-            {tech === "All" ? t("projects_section.filter_all") : tech}
+            {tech === "All" ? t("projects_section.filter_all") : tech === "IA" ? t("projects_section.ai") : tech}
           </button>
         ))}
       </div>

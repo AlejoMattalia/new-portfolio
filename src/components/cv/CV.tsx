@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useCustomTranslation } from "@/hooks/use-custom-translation";
 import { downloadCV } from "@/utils/utils";
 import { CustomButtom } from "../common/CustomButtom";
-import { timelineUnderDependencyData, timelineFreelanceData } from "@/api/api";
+import { timelineUnderDependencyData, timelineFreelanceData, projects } from "@/api/api";
 import { arrayFrontend, arrayBackend, arrayInfra } from "@/utils/arrays";
 import { useNavigate } from "react-router-dom";
 import PhotoProfile from "@/assets/images/alejomattalia.jpeg";
@@ -16,7 +16,7 @@ export const CV = () => {
   const { t } = useCustomTranslation();
   const navigate = useNavigate();
 
-  const translateDate = (dateStr: string) => {
+  const translateDate = (dateStr?: string) => {
     if (!dateStr) return "";
     const parts = dateStr.split(" ");
     if (parts[0].startsWith("months.") || parts[0].startsWith("common.")) {
@@ -33,7 +33,7 @@ export const CV = () => {
       color: "from-blue-500/10 to-cyan-500/10 border-blue-500/20",
       titleKey: "certifications.teclab.title",
       descriptionKey: "certifications.teclab.description",
-      date: "Feb 2024",
+      date: "months.feb", year: "2024",
     },
     {
       emoji: "⚛️",
@@ -41,7 +41,7 @@ export const CV = () => {
       color: "from-yellow-400/10 to-orange-400/10 border-yellow-400/20",
       titleKey: "certifications.coderhouse.title",
       descriptionKey: "certifications.coderhouse.description",
-      date: "Jul 2023",
+      date: "months.jul", year: "2023",
     },
     {
       emoji: "🖥️",
@@ -49,7 +49,7 @@ export const CV = () => {
       color: "from-purple-500/10 to-pink-500/10 border-purple-500/20",
       titleKey: "certifications.webexperto.title",
       descriptionKey: "certifications.webexperto.description",
-      date: "Dic 2023",
+      date: "months.dec", year: "2023",
     },
   ];
 
@@ -119,6 +119,19 @@ export const CV = () => {
             </p>
           </motion.section>
 
+          <section className="flex flex-col gap-6 bg-white dark:bg-zinc-900/40 border border-border rounded-3xl p-8 shadow-sm">
+            <h2 className="text-2xl font-bold text-foreground border-b border-border pb-4">{t("cv_page.projects")}</h2>
+            {projects.map((project) => (
+              <article key={project.title} className="border-b border-border/50 pb-4 last:border-0 last:pb-0">
+                <h3 className="text-lg font-semibold text-foreground">
+                  {project.linkWeb ? <a href={project.linkWeb} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{project.title}</a> : project.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{t(project.description)}</p>
+                <p className="mt-2 text-xs text-subtle">{project.technologies.map(tech => tech === "IA" ? t("projects_section.ai") : tech).join(" · ")}</p>
+              </article>
+            ))}
+          </section>
+
           {/* WORK EXPERIENCE */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -141,9 +154,9 @@ export const CV = () => {
                     <div className="absolute -left-[21px] top-2 w-2 h-2 rounded-full bg-foreground" />
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                       <h4 className="text-lg font-bold text-foreground transition-colors">{item.company}</h4>
-                      <span className="text-xs font-bold text-muted uppercase bg-zinc-100 dark:bg-zinc-800/60 border border-border px-2.5 py-1 rounded-lg w-fit">
-                        {translateDate(item.start)} - {translateDate(item.end)}
-                      </span>
+                      {(item.start || item.end) && (<span className="text-xs font-bold text-muted uppercase bg-zinc-100 dark:bg-zinc-800/60 border border-border px-2.5 py-1 rounded-lg w-fit">
+                        {[item.start, item.end].filter(Boolean).map(translateDate).join(" - ")}
+                      </span>)}
                     </div>
                     <p className="text-subtle font-medium text-sm transition-colors">{t(item.role)}</p>
                     <p className="text-muted text-sm leading-relaxed mt-1 transition-colors">{t(item.description)}</p>
@@ -170,9 +183,9 @@ export const CV = () => {
                     <div className="absolute -left-[21px] top-2 w-2 h-2 rounded-full bg-foreground" />
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                       <h4 className="text-lg font-bold text-foreground transition-colors">{t(item.role)}</h4>
-                      <span className="text-xs font-bold text-muted uppercase bg-zinc-100 dark:bg-zinc-800/60 border border-border px-2.5 py-1 rounded-lg w-fit">
-                        {translateDate(item.start)} - {translateDate(item.end)}
-                      </span>
+                      {(item.start || item.end) && (<span className="text-xs font-bold text-muted uppercase bg-zinc-100 dark:bg-zinc-800/60 border border-border px-2.5 py-1 rounded-lg w-fit">
+                        {[item.start, item.end].filter(Boolean).map(translateDate).join(" - ")}
+                      </span>)}
                     </div>
                     <p className="text-muted text-sm leading-relaxed mt-1 transition-colors">{t(item.description)}</p>
                     <div className="flex gap-2 flex-wrap mt-2">
@@ -352,7 +365,7 @@ export const CV = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-muted uppercase tracking-wider">{cert.institution}</span>
                     <span className="text-xs font-bold text-muted bg-zinc-100 dark:bg-zinc-800/60 border border-border px-2 py-0.5 rounded-md">
-                      {cert.date}
+                      {t(cert.date)} {cert.year}
                     </span>
                   </div>
                   <h3 className="text-base font-bold text-foreground leading-snug mt-1 transition-colors">{t(cert.titleKey)}</h3>
@@ -375,11 +388,9 @@ export const CV = () => {
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-between p-3 bg-zinc-50 dark:bg-zinc-800/20 border border-border rounded-2xl">
                 <span className="text-sm font-semibold text-foreground">🇦🇷 {t("cv_page.languages_list.spanish")}</span>
-                <span className="text-xs font-bold text-muted bg-zinc-100 dark:bg-zinc-800 px-2.5 py-1 rounded-lg border border-border">C2</span>
               </div>
               <div className="flex items-center justify-between p-3 bg-zinc-50 dark:bg-zinc-800/20 border border-border rounded-2xl">
                 <span className="text-sm font-semibold text-foreground">🇺🇸 {t("cv_page.languages_list.english")}</span>
-                <span className="text-xs font-bold text-muted bg-zinc-100 dark:bg-zinc-800 px-2.5 py-1 rounded-lg border border-border">B2</span>
               </div>
             </div>
           </motion.section>

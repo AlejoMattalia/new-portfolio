@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useCustomTranslation } from "@/hooks/use-custom-translation";
+import { projects } from "@/api/api";
 
 export const Stats = () => {
     const { t } = useCustomTranslation();
@@ -10,12 +11,12 @@ export const Stats = () => {
             label: t("home.stats.experience.label"),
         },
         {
-            value: t("home.stats.projects.value"),
+            value: String(projects.length),
             label: t("home.stats.projects.label"),
         },
         {
-            value: t("home.stats.commits.value"),
-            label: t("home.stats.commits.label"),
+            value: "Web + Mobile",
+            label: t("home.stats.platforms.label"),
         },
     ];
 
@@ -36,7 +37,7 @@ export const Stats = () => {
                                 initial={{ scale: 0.5 }}
                                 whileInView={{ scale: 1 }}
                                 transition={{ type: "spring", stiffness: 100, delay: index * 0.1 + 0.2 }}
-                                className="text-5xl md:text-6xl font-bold text-foreground mb-3 tracking-tighter transition-colors"
+                                className="text-4xl lg:text-5xl font-bold text-foreground mb-3 tracking-tighter transition-colors"
                             >
                                 {stat.value}
                             </motion.span>
